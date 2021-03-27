@@ -1,0 +1,121 @@
+* {
+   box-sizing: border-box;
+}
+
+html, body {
+ 
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fef6e4;
+ 
+
+}
+
+
+nav{
+  background: #232946 ;
+  color: #fffffe;
+}
+
+
+
+.quill {
+
+ 
+
+  height: 100%;
+  width: 100%;
+  	-webkit-box-shadow: 0 10px 6px -6px #777;
+  	-moz-box-shadow: 0 10px 6px -6px #777;
+  	box-shadow: 0 10px 6px -6px #777;
+ 
+
+ 
+}
+
+.ql-snow.ql-toolbar {
+  display: block;
+  background: #8bd3dd;
+  min-height: 60px;
+  margin-top: 2rem;
+  border-radius: 20px 20px 0px 0px;
+
+  
+}
+.ql-editor {
+  cursor: text;
+  min-height: 18em;
+  text-align: center;
+  overflow: auto;
+  font-size: 20px;
+  background: #fef6e4;
+   
+
+
+}
+.MuiListItem-root.Mui-selected {
+  opacity: 0.8;
+  color: #f582ae;
+ 
+}
+
+.MuiListItemText-secondary{
+  color: lightgray !important;
+}
+
+.form-control {
+  width: 60%;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+.btn-submit {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.jumbotron {
+
+  background: transparent;
+  border: dashed 2px #8bd3dd;
+ 
+  margin-top: 8rem !important;
+  margin: auto;
+  max-width: 600px;
+  	-webkit-box-shadow: 0 10px 6px -6px #777;
+  	-moz-box-shadow: 0 10px 6px -6px #777;
+  	box-shadow: 0 10px 6px -6px #777;
+}
+
+.navbar-brand {
+  text-decoration: none;
+  color: #f582ae !important;
+}
+
+.brandName {
+  text-decoration: none !important;
+  color: #f582ae;
+  cursor: pointer;
+  
+}
+
+.brandName:hover{
+   text-decoration: none !important;
+   color: #8bd3dd;
+
+}
+
+@media screen and (max-width: 767px) {
+  .form-control {
+    width: 100%;
+  }
+
+}
