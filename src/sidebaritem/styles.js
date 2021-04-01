@@ -8,7 +8,8 @@ const styles = theme => ({
     },
       
     background: '#fef6e4',
-    width: '94%',
+    maxWidth: '95%',
+    
     margin: '0.5rem',
     padding: '0.5rem',
    
@@ -16,6 +17,7 @@ const styles = theme => ({
 
   textSection: {
     maxWidth: '85%',
+    
   
    
   },  

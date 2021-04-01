@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import CardComponentPublic from '../card/cardNotePublic';
+
 import SidebarComponentPublic from '../sidebar/sidebarPublic';
+
+
 import Notes from '../editor/notes';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -49,7 +53,7 @@ class PublicNotes extends React.Component {
   
     const drawer = (
     <div>
-      <div className={classes.toolbar} />
+        <div className={classes.toolbar} />
    
         <Divider />
         <SidebarComponentPublic 
@@ -58,8 +62,9 @@ class PublicNotes extends React.Component {
           selectNote={this.selectNote}
         >
 
+          
         </SidebarComponentPublic>
-   
+
      
     </div>
     );
@@ -125,10 +130,20 @@ class PublicNotes extends React.Component {
           selectedNoteIndex={this.state.selectedNoteIndex}
           notes={this.state.notes}
          >
+              </Notes> :
+              <div style={{marginTop: "3rem"}}>
+                <CardComponentPublic
+                  selectedNoteIndex={ this.state.selectedNoteIndex }
+                  notes={this.state.notes}
+                  selectNote={ this.selectNote }>
+                  
+                </CardComponentPublic>
+           
+                </div>
 
-          </Notes> :
-          <h5 className={classes.info}>Click on the "Notes" menu bar to see list of notes or create new one if your are signed in!</h5>
-          }
+             
+ 
+        }
        
           </main>
       </div>

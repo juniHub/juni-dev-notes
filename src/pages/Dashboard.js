@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import SidebarComponent from '../sidebar/sidebar';
+import CardComponentPrivate from '../card/cardNotePrivate';
 
 import EditorComponent from '../editor/editor';
 import AppBar from '@material-ui/core/AppBar';
@@ -132,7 +133,11 @@ class Dashboard extends React.Component {
           noteUpdate={this.noteUpdate}>
 
           </EditorComponent> :
-          <h5 className={classes.info}>Click on the "Notes" menu bar to see list of notes or create new one if your are signed in!</h5>
+         <div style={{marginTop: "6rem"}}>
+             <CardComponentPrivate></CardComponentPrivate>
+           
+          </div>
+
           }
           </main>
       </div>
