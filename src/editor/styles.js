@@ -54,6 +54,7 @@ const styles = theme => ( {
 
   heading: {
     padding: '1rem',
+    color: '#232946 !important',
   },
 
 
@@ -95,6 +96,43 @@ const styles = theme => ( {
 
 
   },
+
+    formControl: {
+    margin: theme.spacing(1),
+    minWidth: 200,
+    boxSizing: 'border-box',
+    border: 'none',
+    
+    padding: '2.6rem',
+    height: '60px',
+    width: '100%',
+    backgroundColor: '#f582ae',
+   
+    textAlign: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '20px',
+  },
+    
+    
+  categories: {
+  
+    boxSizing: 'border-box',
+    marginLeft: '20px',
+    fontSize: '25px',
+    textAlign: 'center',
+    width: '60%',
+    height: '60px',
+    color: '#232946 !important',
+    borderBottom: 'solid 2px #232946',
+   
+      
+  },
+
+  selectCategory: {
+    backgroundColor:'#232946 !important',
+  }
 
 });
 

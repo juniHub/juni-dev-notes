@@ -61,7 +61,7 @@ const styles = theme => ({
   },
 
   newNoteInput: {
-    width: '94%',
+    width: '90%',
     margin: '0.5rem',
     marginTop: '2rem',
     padding: '0.5rem',
@@ -75,7 +75,7 @@ const styles = theme => ({
   },
  
   newNoteSubmitBtn: {
-    width: '94%',
+    width: '90%',
     fontWeight: '900',
     margin: '0.5rem',
     padding: '0.5rem',
@@ -93,6 +93,8 @@ const styles = theme => ({
   },
     
   search: {
+
+    minWidth: '300px',
     border: '3px solid #eebbc3',
     position: 'relative',
     
@@ -101,7 +103,7 @@ const styles = theme => ({
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
     margin: '0.5rem',
-    width: '100%',
+    width: '90%',
     
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(1),
@@ -143,6 +145,51 @@ const styles = theme => ({
     padding: theme.spacing(0, 1),
     height: '100%',
 
+  },
+
+   formControl: {
+    
+    minWidth: 200,
+    boxSizing: 'border-box',
+    border: 'none',
+    
+     padding: '2.5rem',
+     margin: '0.5rem',
+    
+    height: '60px',
+    width: '90%',
+    backgroundColor: '#f582ae',
+   
+    textAlign: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '20px',
+  },
+    
+    
+  categories: {
+  
+    boxSizing: 'border-box',
+    
+    fontSize: '25px',
+    textAlign: 'center',
+    width: '60%',
+    height: '60px',
+    color: '#232946 !important',
+    borderBottom: 'solid 2px #232946',
+   
+      
+  },
+
+  selectCategory: {
+    backgroundColor: '#232946 !important',
+    color: '#f582ae !important',
+  },
+
+   heading: {
+    padding: '1rem',
+    color: '#232946 !important',
   },
 
 

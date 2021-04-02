@@ -11,12 +11,17 @@ import SidebarItemComponent from '../sidebaritem/sidebarItem';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import SendIcon from '@material-ui/icons/Send';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 import { auth } from '../services/firebase';
 
 class CardComponentPrivate extends React.Component {
   constructor() {
     super();
     this.state = {
+      category: "",
       title: "",
       searchTerm: "",
       userName: auth().currentUser && auth().currentUser.displayName !== null? auth().currentUser.displayName: auth().currentUser && auth().currentUser.displayName === null? auth().currentUser.email:"Please log in to see the post's author",
@@ -56,30 +61,73 @@ class CardComponentPrivate extends React.Component {
             />
           </div>
 
-          <div className={classes.cardContainer}>
+          {auth().currentUser === null?null:
+
+            <div>
+        <FormControl className={classes.formControl}>
+        <InputLabel className={ classes.heading } id="categories">Categories</InputLabel>
+        <Select className={ classes.categories }
+          labelId="categories"
+          id="category"
+          value={this.state.category}
+           onChange={this.updateCategory.bind(this)}
+        >
+          <MenuItem className={ classes.selectCategory } value="React">React</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="MongoDB">MongoDB</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="Others">Others</MenuItem>
+        </Select>
+        </FormControl>
+
+
+                <input 
+                  className={classes.newNoteInput}
+                  placeholder='Enter Note Title'
+                  onChange={this.updateTitle.bind(this)}
+                  type='text'
+                  value={this.state.title}>
+                </input>
+                <Button 
+                  className={classes.newNoteSubmitBtn}
+                  onClick={this.newNote.bind(this)}>
+                  <div className={classes.sendIcon}>
+                    <SendIcon />
+       
+                  </div>
+                  Submit</Button>
+              </div>
+    }
+           
+         <div className={classes.cardContainer}>
+            {
+              filteredNotes.map( ( _note, _index ) =>
               {
-                filteredNotes.map((_note, _index) => {
-                    return (
-                <Card key={ _index } className={classes.cardContent}>
-                <CardContent >
-                 
-                    <Typography className={classes.cardBody} variant="body2" component="p">
-                      <SidebarItemComponent
-                        _note={_note}
-                        _index={_index}
-                        selectedNoteIndex={selectedNoteIndex}
-                        selectNote={this.selectNote}
-                        deleteNote={this.deleteNote}>
-                        </SidebarItemComponent>
-                              
-                    </Typography>
-                </CardContent>
-                </Card>
-                    )
-                  
+                
+                return (
+                <>
+                  {
+                    auth ().currentUser !== null && _note.currentUserID === auth().currentUser.uid ?
+   
+                      <Card key={ _index } className={ classes.cardContent }>
+                        <CardContent >
+                
+                          <Typography className={ classes.cardBody } variant="body2" component="p">
+                            <SidebarItemComponent
+                              _note={ _note }
+                              _index={ _index }
+                              selectedNoteIndex={ selectedNoteIndex }
+                              selectNote={ this.selectNote }
+                              deleteNote={ this.deleteNote }>
+                            </SidebarItemComponent>
+                                
+                          </Typography>
+                        </CardContent>
+                      </Card> : null
+                    }
+                    </>
+                  )
                 })
               }
-            </div>
+              </div>
           
         </div>
       );
@@ -87,6 +135,12 @@ class CardComponentPrivate extends React.Component {
       return(<div>No Note Available</div>);
     }
   }
+
+   updateCategory = (e) => {
+    this.setState({ category: e.target.value });
+   
+  }
+
 
   updateTitle = (e) => {
     this.setState({ title: e.target.value });
@@ -103,11 +157,11 @@ class CardComponentPrivate extends React.Component {
 
   newNote = () => {
     if(this.state.title !== ""){
-    this.props.newNote(this.state.title, this.state.userName, this.state.currentUserID);
-    this.setState({ title: ""});
+    this.props.newNote(this.state.category, this.state.title, this.state.userName, this.state.currentUserID);
+    this.setState({ title: "", category :""});
     }
     else{
-      this.props.newNote("default title without name", this.state.userName, this.state.currentUserID);
+      this.props.newNote(this.state.category, "default title without name", this.state.userName, this.state.currentUserID);
       
     }
   }

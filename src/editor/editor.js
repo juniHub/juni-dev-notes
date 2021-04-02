@@ -7,7 +7,11 @@ import BorderColorIcon from '@material-ui/icons/BorderColor';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import ImageCompress from 'quill-image-compress';
-import { Button} from '@material-ui/core';
+import { Button } from '@material-ui/core';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 //import { auth } from '../services/firebase';
 import '../App.css';
 
@@ -58,6 +62,7 @@ class EditorComponent extends React.Component {
   constructor() {
     super();
     this.state = {
+      category:'',
       text: '',
       title: '',
       id: '',
@@ -66,7 +71,8 @@ class EditorComponent extends React.Component {
   }
 
   componentDidMount = () => {
-    this.setState({
+    this.setState( {
+      category: this.props.selectedNote.category,
       text: this.props.selectedNote.body,
       title: this.props.selectedNote.title,
       id: this.props.selectedNote.id,
@@ -75,7 +81,8 @@ class EditorComponent extends React.Component {
 
   componentDidUpdate = () => {
     if(this.props.selectedNote.id !== this.state.id) {
-      this.setState({
+      this.setState( {
+        category: this.props.selectedNote.category,
         text: this.props.selectedNote.body,
         title: this.props.selectedNote.title,
         id: this.props.selectedNote.id,
@@ -89,6 +96,21 @@ class EditorComponent extends React.Component {
 
     return(
       <div className={ classes.editorContainer }>
+        <FormControl className={classes.formControl}>
+        <InputLabel className={ classes.heading } id="categories">Categories</InputLabel>
+        <Select className={ classes.categories }
+          labelId="categories"
+          id="category"
+          value={this.state.category}
+          onChange={(e) => this.updateCategory(e.target.value)}
+        >
+          <MenuItem className={ classes.selectCategory } value="React">React</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="MongoDB">MongoDB</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="Others">Others</MenuItem>
+        </Select>
+        </FormControl>
+        
+
         <div className={classes.titleHeading}>
         <BorderColorIcon className={classes.editIcon}></BorderColorIcon>
        
@@ -129,13 +151,20 @@ class EditorComponent extends React.Component {
     await this.setState({ text: val });
     this.update();
   };
-  updateTitle = async (txt) => {
-    await this.setState({ title: txt });
+  updateTitle = async ( txt ) =>
+  {
+    await this.setState( { title: txt } );
+    this.update();
+  };
+
+   updateCategory = async (txt) => {
+    await this.setState({ category: txt });
     this.update();
   }
   
   update = debounce(() => {
-    this.props.noteUpdate(this.state.id, {
+    this.props.noteUpdate( this.state.id, {
+      category: this.state.category,
       title: this.state.title,
       body: this.state.text
     })

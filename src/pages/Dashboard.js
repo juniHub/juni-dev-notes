@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import SidebarComponent from '../sidebar/sidebar';
+import Category from '../sidebar/categories';
 import CardComponentPrivate from '../card/cardNotePrivate';
 
 import EditorComponent from '../editor/editor';
@@ -56,15 +57,15 @@ class Dashboard extends React.Component {
       <div className={classes.toolbar} />
    
         <Divider />
-        <SidebarComponent
+        <Category
 
           selectedNoteIndex={this.state.selectedNoteIndex}
           notes={this.state.notes}
-          deleteNote={this.deleteNote}
-          selectNote={this.selectNote}
-          newNote={this.newNote}>
+        
+          selectNote={this.selectNote}>
+         
 
-        </SidebarComponent>
+        </Category>
    
      
     </div>
@@ -133,8 +134,14 @@ class Dashboard extends React.Component {
           noteUpdate={this.noteUpdate}>
 
           </EditorComponent> :
-         <div style={{marginTop: "6rem"}}>
-             <CardComponentPrivate></CardComponentPrivate>
+         <div style={{marginTop: "3rem"}}>
+          <CardComponentPrivate
+          selectedNoteIndex={this.state.selectedNoteIndex}
+          notes={this.state.notes}
+          deleteNote={this.deleteNote}
+          selectNote={this.selectNote}
+          newNote={this.newNote}>
+          </CardComponentPrivate>
            
           </div>
 
@@ -166,15 +173,18 @@ class Dashboard extends React.Component {
       .firestore()
       .collection('notes')
       .doc(id)
-      .update({
+      .update( {
+        
+        category: noteObj.category,
         title: noteObj.title,
         body: noteObj.body,
        
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
       });
   }
-  newNote = async (title, userName, currentUserID) => {
+  newNote = async (category,title, userName, currentUserID) => {
     const note = {
+      category: category,
       title: title,
       body: '',
       userName: userName,
@@ -183,7 +193,8 @@ class Dashboard extends React.Component {
     const newFromDB = await firebase
       .firestore()
       .collection('notes')
-      .add({
+      .add( {
+        category: note.category,
         title: note.title,
         body: note.body,
         userName: note.userName,

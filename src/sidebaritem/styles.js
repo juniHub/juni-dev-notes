@@ -1,4 +1,14 @@
-const styles = theme => ({
+const styles = theme => ( {
+  
+  chip: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: theme.spacing(0.5),
+    },
+  },
+
   listItem: {
     cursor: 'pointer',
     color: '#f582ae',
