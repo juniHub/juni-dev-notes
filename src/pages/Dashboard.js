@@ -18,6 +18,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
+
 import { withStyles } from '@material-ui/core/styles';
 import appStyle from './appStyle';
 
@@ -56,8 +57,7 @@ class Dashboard extends React.Component {
     <div>
       <div className={classes.toolbar} />
    
-        <Divider />
-        <Category
+      <Category
 
           selectedNoteIndex={this.state.selectedNoteIndex}
           notes={this.state.notes}
@@ -75,7 +75,7 @@ class Dashboard extends React.Component {
 
   
       <div className={ classes.root }>
-          <CssBaseline />
+        
       <AppBar position="fixed" className={classes.appBar}>
           <Toolbar className={ classes.toolBar }>
           <IconButton
@@ -86,7 +86,7 @@ class Dashboard extends React.Component {
             className={classes.menuButton}
             >
             <MenuIcon />
-             Notes
+             Categories
            
           </IconButton>
             <Typography className={ classes.brandTitle } variant="h6" noWrap>

@@ -1,44 +1,44 @@
 const styles = theme => ( {
-  
-  chip: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    '& > *': {
-      margin: theme.spacing(0.5),
-    },
-  },
+ 
 
   listItem: {
     cursor: 'pointer',
-    color: '#f582ae',
   
-      '&:hover': {
-     opacity: '0.8',
-    },
-      
     background: '#fef6e4',
     maxWidth: '95%',
     
     margin: '0.5rem',
     padding: '0.5rem',
+    display: 'flex',
+    alignItems: 'center',
+    
+    borderRadius: '30px',
+    padding: '1.5rem',
+   
+ 
+    
+    '&:hover': {
+     background: '#001858',
+     color: '#f582ae',
+    },
+      
+   
+   
    
   },
 
   textSection: {
-    maxWidth: '85%',
-    
-  
-   
+    maxWidth: '100%',
+ 
+ 
   },  
 
   deleteIcon: {
     position: 'absolute',
-    right: '5px',
+    right: '20px',
     top: 'calc(50% - 15px)',
-    '&:hover': {
-      color: '#8bd3dd'
-    }
+
+    
   },
 
  

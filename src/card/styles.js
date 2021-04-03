@@ -147,45 +147,43 @@ const styles = theme => ({
 
   },
 
-   formControl: {
-    
-    minWidth: 200,
-    boxSizing: 'border-box',
-    border: 'none',
-    
-     padding: '2.5rem',
-     margin: '0.5rem',
-    
-    height: '60px',
+  
+  formControl: {
     width: '90%',
-    backgroundColor: '#f582ae',
+    margin: '0.5rem',
+    marginTop: '2rem',
+    padding: '0.5rem',
+    height: '100px',
+    outline: 'none',
+    background: '#fef6e4',
+  
+    border: 'dashed 3px #f582ae',
+    '&:focus': {
+      outline: '5px solid #f582ae'
+    }
    
-    textAlign: 'center',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: '20px',
   },
     
     
   categories: {
   
-    boxSizing: 'border-box',
     
     fontSize: '25px',
     textAlign: 'center',
-    width: '60%',
-    height: '60px',
-    color: '#232946 !important',
-    borderBottom: 'solid 2px #232946',
+    width: '95%',
+    height: '80px',
+    color: '#f582ae',
+  
    
       
   },
 
   selectCategory: {
-    backgroundColor: '#232946 !important',
+ 
     color: '#f582ae !important',
+    background: '#232946',
   },
+
 
    heading: {
     padding: '1rem',

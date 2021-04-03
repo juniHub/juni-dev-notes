@@ -10,7 +10,7 @@ const styles = theme => ({
     float: 'left',
     overflowY: 'scroll',
     overflowX: 'hidden',
-    background: '#232946',
+    background: '#fef6e4',
        
   },
 
@@ -70,11 +70,11 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: 'white',
+    color: '#001858',
   
   },
   inputRoot: {
-    color: '#fffffe',
+    color: '#001858',
   },
   inputInput: {
     padding: theme.spacing( 1, 1, 1, 0 ),
@@ -83,7 +83,7 @@ const styles = theme => ({
     transition: theme.transitions.create( 'width' ),
     width: '100%',
     [ theme.breakpoints.up( 'sm' ) ]: {
-      width: '12ch',
+      width: '18ch',
       '&:focus': {
         width: '20ch',
       },

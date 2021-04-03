@@ -57,12 +57,15 @@ nav{
 }
 .MuiListItem-root.Mui-selected {
   opacity: 0.8;
+  background: #001858 !important;
   color: #f582ae;
+
  
 }
 
 .MuiListItemText-secondary{
-  color: lightgray !important;
+  color: gray !important;
+  
 }
 
 .form-control {

@@ -11,6 +11,7 @@ class Notes extends React.Component {
   constructor() {
     super();
     this.state = {
+      category:'',
       text: '',
       title: '',
       id: '',
@@ -19,6 +20,7 @@ class Notes extends React.Component {
 
   componentDidMount = () => {
     this.setState({
+      category: this.props.selectedNote.category,
       text: this.props.selectedNote.body,
       title: this.props.selectedNote.title,
       id: this.props.selectedNote.id,
@@ -28,6 +30,7 @@ class Notes extends React.Component {
   componentDidUpdate = () => {
     if(this.props.selectedNote.id !== this.state.id) {
       this.setState({
+        category: this.props.selectedNote.category,
         text: this.props.selectedNote.body,
         title: this.props.selectedNote.title,
         id: this.props.selectedNote.id,
@@ -43,11 +46,13 @@ class Notes extends React.Component {
     return(
       <div className={ classes.editorContainer }>
         <div className={classes.titleHeading}>
-            <h3 className="heading">{this.state.title}</h3>
+            <h3 className={classes.heading}>{this.state.title}</h3>
        
         </div>
 
         <div className={classes.noteContent}>
+
+         <h5 className={classes.heading}>{this.state.category}</h5>
 
         <p>{parse(this.state.text)}</p>
 

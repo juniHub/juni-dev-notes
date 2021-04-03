@@ -12,9 +12,9 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-//import { auth } from '../services/firebase';
-import '../App.css';
+import CategoryIcon from '@material-ui/icons/Category';
 
+import '../App.css';
 
 Quill.register('modules/imageCompress', ImageCompress);
 
@@ -62,7 +62,7 @@ class EditorComponent extends React.Component {
   constructor() {
     super();
     this.state = {
-      category:'',
+      category:'All',
       text: '',
       title: '',
       id: '',
@@ -97,7 +97,7 @@ class EditorComponent extends React.Component {
     return(
       <div className={ classes.editorContainer }>
         <FormControl className={classes.formControl}>
-        <InputLabel className={ classes.heading } id="categories">Categories</InputLabel>
+        <InputLabel className={ classes.heading } id="categories"><CategoryIcon/>Categories</InputLabel>
         <Select className={ classes.categories }
           labelId="categories"
           id="category"
@@ -106,7 +106,19 @@ class EditorComponent extends React.Component {
         >
           <MenuItem className={ classes.selectCategory } value="React">React</MenuItem>
           <MenuItem className={ classes.selectCategory } value="MongoDB">MongoDB</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="Firebase">Firebase</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="Nextjs">Nextjs</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="GraphQL">GraphQL</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="Gatsby">Gatsby</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="Github">Github</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="Ideas">Ideas</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="Algorithm">Algorithm</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="Api">Api</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="Portfolio">Portfolio</MenuItem>
+           <MenuItem className={ classes.selectCategory } value="Tutorial">Tutorial</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="Open Source">Open Source</MenuItem>
           <MenuItem className={ classes.selectCategory } value="Others">Others</MenuItem>
+          
         </Select>
         </FormControl>
         

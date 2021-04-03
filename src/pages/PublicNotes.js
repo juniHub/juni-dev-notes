@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import CardComponentPublic from '../card/cardNotePublic';
 
 import SidebarComponentPublic from '../sidebar/sidebarPublic';
+import Category from '../sidebar/categories';
 
 
 import Notes from '../editor/notes';
@@ -55,15 +56,16 @@ class PublicNotes extends React.Component {
     <div>
         <div className={classes.toolbar} />
    
-        <Divider />
-        <SidebarComponentPublic 
+        
+         <Category
+
           selectedNoteIndex={this.state.selectedNoteIndex}
           notes={this.state.notes}
-          selectNote={this.selectNote}
-        >
+        
+          selectNote={this.selectNote}>
+         
 
-          
-        </SidebarComponentPublic>
+        </Category>
 
      
     </div>
@@ -73,7 +75,7 @@ class PublicNotes extends React.Component {
 
   
       <div className={ classes.root }>
-          <CssBaseline />
+       
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.toolBar}>
           <IconButton
@@ -84,7 +86,7 @@ class PublicNotes extends React.Component {
             className={classes.menuButton}
           >
               <MenuIcon />
-              Notes
+              Categories
           </IconButton>
             <Typography className={ classes.brandTitle } variant="h6" noWrap>
             <Link className={classes.linkLink} to="/"><HomeIcon/> Home </Link> 
