@@ -6,9 +6,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 import Chip from '@material-ui/core/Chip';
 
-import { auth } from '../services/firebase';
 
-class CategoryItem extends React.Component {
+
+class CategoryItemPublic extends React.Component {
 
   render() {
 
@@ -16,8 +16,7 @@ class CategoryItem extends React.Component {
 
     return (
       
-       <> {auth().currentUser !== null && _note.currentUserID===auth().currentUser.uid? 
-        
+    
         <ListItem key={_index}
           className={classes.listItem}
           selected={selectedNoteIndex === _index}
@@ -44,8 +43,7 @@ class CategoryItem extends React.Component {
         </div>
          
         </ListItem>
-         : null}
-         </>
+       
    
     );
   }
@@ -54,4 +52,4 @@ class CategoryItem extends React.Component {
 
 }
 
-export default withStyles(styles)(CategoryItem);
+export default withStyles(styles)(CategoryItemPublic);

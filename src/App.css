@@ -9,6 +9,7 @@ html, body {
   margin: 0;
   padding: 0;
   background: #fef6e4;
+
  
 
 }
@@ -113,12 +114,5 @@ nav{
 .brandName:hover{
    text-decoration: none !important;
    color: #8bd3dd;
-
-}
-
-@media screen and (max-width: 767px) {
-  .form-control {
-    width: 100%;
-  }
 
 }

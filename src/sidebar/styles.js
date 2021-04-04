@@ -1,6 +1,13 @@
 import { fade } from '@material-ui/core/styles';
 
-const styles = theme => ({
+const styles = theme => ( {
+  
+   alert: {
+    width: '100%',
+    '& > * + *': {
+      marginTop: theme.spacing(2),
+    },
+  },
   
   sidebarContainer: {
     margin: '0px',

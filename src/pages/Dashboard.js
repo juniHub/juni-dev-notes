@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import SidebarComponent from '../sidebar/sidebar';
 import Category from '../sidebar/categories';
 import CardComponentPrivate from '../card/cardNotePrivate';
 
 import EditorComponent from '../editor/editor';
 import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
+
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';

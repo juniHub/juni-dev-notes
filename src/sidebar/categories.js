@@ -2,11 +2,11 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import List from '@material-ui/core/List';
-import { Divider, Button } from '@material-ui/core';
+import { Divider } from '@material-ui/core';
 import CategoryItem from '../sidebaritem/categoryItem';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import SendIcon from '@material-ui/icons/Send';
+
 import { auth } from '../services/firebase';
 
 class Category extends React.Component {
@@ -30,7 +30,11 @@ class Category extends React.Component {
    
     if(notes) {
 
-    filteredNotes = notes.filter((note) => {return note.category.toLowerCase().indexOf(this.state.searchTerm.toLowerCase()) !== -1 });
+      filteredNotes = notes.filter( ( note ) =>
+      {
+        return note.category.toLowerCase().indexOf( this.state.searchTerm.toLowerCase() ) !== -1;
+ 
+      } );
 
       return(
         <div className={classes.sidebarContainer}>

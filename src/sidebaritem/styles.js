@@ -8,7 +8,7 @@ const styles = theme => ( {
     maxWidth: '95%',
     
     margin: '0.5rem',
-    padding: '0.5rem',
+ 
     display: 'flex',
     alignItems: 'center',
     

@@ -3,14 +3,11 @@ import { Link } from 'react-router-dom';
 
 import CardComponentPublic from '../card/cardNotePublic';
 
-import SidebarComponentPublic from '../sidebar/sidebarPublic';
-import Category from '../sidebar/categories';
-
+import CategoryPublic from '../sidebar/categoriesPublic';
 
 import Notes from '../editor/notes';
 import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
+
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
@@ -57,7 +54,7 @@ class PublicNotes extends React.Component {
         <div className={classes.toolbar} />
    
         
-         <Category
+         <CategoryPublic
 
           selectedNoteIndex={this.state.selectedNoteIndex}
           notes={this.state.notes}
@@ -65,7 +62,7 @@ class PublicNotes extends React.Component {
           selectNote={this.selectNote}>
          
 
-        </Category>
+        </CategoryPublic>
 
      
     </div>

@@ -2,18 +2,18 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import List from '@material-ui/core/List';
-import { Divider, Button } from '@material-ui/core';
-import SidebarItemComponent from '../sidebaritem/sidebarItem';
+import { Divider } from '@material-ui/core';
+import CategoryItemPublic from '../sidebaritem/categoryItemPublic';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import SendIcon from '@material-ui/icons/Send';
+
 import { auth } from '../services/firebase';
 
-class SidebarComponent extends React.Component {
+class CategoryPublic extends React.Component {
   constructor() {
     super();
     this.state = {
-      title: "",
+      category: "",
       searchTerm: "",
       userName: auth().currentUser && auth().currentUser.displayName !== null? auth().currentUser.displayName: auth().currentUser && auth().currentUser.displayName === null? auth().currentUser.email:"Please log in to see the post's author",
       currentUserID: auth().currentUser? auth().currentUser.uid:"",
@@ -30,8 +30,11 @@ class SidebarComponent extends React.Component {
    
     if(notes) {
 
-    filteredNotes = notes.filter((note) => {return note.title.toLowerCase().indexOf(this.state.searchTerm.toLowerCase()) !== -1 ; 
-    });
+      filteredNotes = notes.filter( ( note ) =>
+      {
+        return note.category.toLowerCase().indexOf( this.state.searchTerm.toLowerCase() ) !== -1;
+ 
+      } );
 
       return(
         <div className={classes.sidebarContainer}>
@@ -41,7 +44,7 @@ class SidebarComponent extends React.Component {
        
             </div>
             <InputBase
-              placeholder="Search Title…"
+              placeholder="Search Category…"
               type='text'
               classes={{
                 root: classes.inputRoot,
@@ -53,39 +56,20 @@ class SidebarComponent extends React.Component {
             />
           </div>
 
-          {auth().currentUser === null?null:
-
-              <div>
-                <input 
-                  className={classes.newNoteInput}
-                  placeholder='Enter Note Title'
-                  onChange={this.updateTitle.bind(this)}
-                  type='text'
-                  value={this.state.title}>
-                </input>
-                <Button 
-                  className={classes.newNoteSubmitBtn}
-                  onClick={this.newNote.bind(this)}>
-                  <div className={classes.sendIcon}>
-                    <SendIcon />
-       
-                  </div>
-                  Submit</Button>
-              </div>
-    }
+          
            
           <List>
               {
                 filteredNotes.map((_note, _index) => {
                   return(
                     <div key={_index}>
-                      <SidebarItemComponent
+                      <CategoryItemPublic
                         _note={_note}
                         _index={_index}
                         selectedNoteIndex={selectedNoteIndex}
                         selectNote={this.selectNote}
                         deleteNote={this.deleteNote}>
-                      </SidebarItemComponent>
+                      </CategoryItemPublic>
                       <Divider></Divider>
                     </div>
                   )
@@ -100,11 +84,7 @@ class SidebarComponent extends React.Component {
     }
   }
 
-  updateTitle = (e) => {
-    this.setState({ title: e.target.value });
-   
-  }
-
+ 
   updateSearch = (e) =>{
     this.setState({
       searchTerm: e.target.value.substr(0,20),
@@ -113,20 +93,9 @@ class SidebarComponent extends React.Component {
   }
 
 
-  newNote = () => {
-    if(this.state.title !== ""){
-    this.props.newNote(this.state.title, this.state.userName, this.state.currentUserID);
-    this.setState({ title: ""});
-    }
-    else{
-      this.props.newNote("default title without name", this.state.userName, this.state.currentUserID);
-      
-    }
-  }
-
   selectNote = (n, i) => this.props.selectNote(n, i);
   deleteNote = (note) => this.props.deleteNote(note);
 
 }
 
-export default withStyles(styles)(SidebarComponent);
+export default withStyles(styles)(CategoryPublic);

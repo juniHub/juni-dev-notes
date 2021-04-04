@@ -3,14 +3,14 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
+
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { Divider, Button } from '@material-ui/core';
+
 import SidebarItemComponentPublic from '../sidebaritem/sidebarItemPublic';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import SendIcon from '@material-ui/icons/Send';
+
 import { auth } from '../services/firebase';
 
 class CardComponentPublic extends React.Component {
@@ -69,7 +69,7 @@ class CardComponentPublic extends React.Component {
                         _index={_index}
                         selectedNoteIndex={selectedNoteIndex}
                         selectNote={this.selectNote}
-                        deleteNote={this.deleteNote}>
+                        >
                         </SidebarItemComponentPublic>
                               
                     </Typography>
@@ -84,13 +84,8 @@ class CardComponentPublic extends React.Component {
         </div>
       );
     } else {
-      return(<div>No Note Available</div>);
+      return(<div className={classes.cardRoot}>No Note Available</div>);
     }
-  }
-
-  updateTitle = (e) => {
-    this.setState({ title: e.target.value });
-   
   }
 
   updateSearch = (e) =>{
@@ -101,19 +96,9 @@ class CardComponentPublic extends React.Component {
   }
 
 
-  newNote = () => {
-    if(this.state.title !== ""){
-    this.props.newNote(this.state.title, this.state.userName, this.state.currentUserID);
-    this.setState({ title: ""});
-    }
-    else{
-      this.props.newNote("default title without name", this.state.userName, this.state.currentUserID);
-     
-    }
-  }
 
   selectNote = (n, i) => this.props.selectNote(n, i);
-  deleteNote = (note) => this.props.deleteNote(note);
+
 
 }
 

@@ -7,6 +7,9 @@ import DeleteIcon from '@material-ui/icons/Delete';
 //import { removeHTMLTags } from '../helpers';
 import { auth } from '../services/firebase';
 
+import { Alert, AlertTitle } from '@material-ui/lab';
+
+
 class SidebarItemComponent extends React.Component {
 
   render() {
@@ -33,7 +36,8 @@ class SidebarItemComponent extends React.Component {
                 >
                  
                 </ListItemText>
-            </div>
+          </div>
+          
             
             {auth().currentUser !== null && _note.currentUserID===auth().currentUser.uid? <DeleteIcon onClick={() => this.deleteNote(_note)}
               className={classes.deleteIcon}></DeleteIcon> : null
@@ -47,7 +51,8 @@ class SidebarItemComponent extends React.Component {
   selectNote = (n, i) => this.props.selectNote(n, i);
   deleteNote = (note) => {
     if(window.confirm(`Are you sure you want to delete: ${note.title}`)) {
-      this.props.deleteNote(note);
+      this.props.deleteNote( note );
+    
     }
   }
 

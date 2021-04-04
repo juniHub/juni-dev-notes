@@ -1,12 +1,12 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
-import List from '@material-ui/core/List';
+
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
+
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { Divider, Button } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import SidebarItemComponent from '../sidebaritem/sidebarItem';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
@@ -31,6 +31,7 @@ class CardComponentPrivate extends React.Component {
     };
    
   }
+
 
   render() {
 
@@ -64,7 +65,7 @@ class CardComponentPrivate extends React.Component {
 
           {auth().currentUser === null?null:
 
-            <div>
+        <div>
         <FormControl className={classes.formControl}>
         <InputLabel className={ classes.heading } id="categories"><CategoryIcon/>Categories</InputLabel>
         <Select className={ classes.categories }
@@ -90,7 +91,7 @@ class CardComponentPrivate extends React.Component {
         </Select>
         </FormControl>
 
-
+           <FormControl className={classes.inputContainer}>
                 <input 
                   className={classes.newNoteInput}
                   placeholder='Enter Note Title'
@@ -106,7 +107,10 @@ class CardComponentPrivate extends React.Component {
        
                   </div>
                   Submit</Button>
-              </div>
+            </FormControl>
+              
+
+        </div>
     }
            
          <div className={classes.cardContainer}>
@@ -144,7 +148,7 @@ class CardComponentPrivate extends React.Component {
         </div>
       );
     } else {
-      return(<div>No Note Available</div>);
+      return(<div className={classes.cardRoot}>No Note Available</div>);
     }
   }
 

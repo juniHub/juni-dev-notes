@@ -11,10 +11,13 @@ const styles = theme => ({
     justifyContent: 'center',
     textAlign: 'center',
     margin: '0',
-    padding: '2rem',
-    height: '100%',
+    paddingTop: '4rem',
+    paddingBottom: '4rem',
+    minHeight: '100vh',
     background: '#232946',
+    color: '#fffffe',
     overflow: 'auto',
+    
   
     
        
@@ -60,13 +63,25 @@ const styles = theme => ({
        
   },
 
+  inputContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: '2rem auto',
+    
+    flexDirection: 'row',
+     '@media (max-width: 780px)' : {
+    flexDirection: 'column'
+  }
+  },
+
   newNoteInput: {
-    width: '90%',
+    width: '100%',
     margin: '0.5rem',
-    marginTop: '2rem',
     padding: '0.5rem',
     height: '60px',
     outline: 'none',
+    minWidth: '280px',
   
     border: 'dashed 3px #f582ae',
     '&:focus': {
@@ -75,7 +90,7 @@ const styles = theme => ({
   },
  
   newNoteSubmitBtn: {
-    width: '90%',
+    width: '100%',
     fontWeight: '900',
     margin: '0.5rem',
     padding: '0.5rem',
@@ -83,10 +98,11 @@ const styles = theme => ({
     borderRadius: '20px',
     color: '#001858',
     height: '60px',
+    minWidth: '280px',
    
     '&:hover': {
       backgroundColor: '#8bd3dd',
-      borderRadius: '20px',
+     
     },
      
     
@@ -189,6 +205,8 @@ const styles = theme => ({
     padding: '1rem',
     color: '#232946 !important',
   },
+   
+   
 
 
 

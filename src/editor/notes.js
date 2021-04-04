@@ -11,7 +11,7 @@ class Notes extends React.Component {
   constructor() {
     super();
     this.state = {
-      category:'',
+      category:'All',
       text: '',
       title: '',
       id: '',
@@ -46,15 +46,19 @@ class Notes extends React.Component {
     return(
       <div className={ classes.editorContainer }>
         <div className={classes.titleHeading}>
-            <h3 className={classes.heading}>{this.state.title}</h3>
+          <h3 className={ classes.heading }>{ this.state.title }</h3>
+        
+          
        
         </div>
 
+         <h6 style={{color: '#8bd3dd'}}>Category: {this.state.category}</h6>
+
         <div className={classes.noteContent}>
 
-         <h5 className={classes.heading}>{this.state.category}</h5>
+        
 
-        <p>{parse(this.state.text)}</p>
+         <p>{parse(this.state.text)}</p>
 
         </div>
       

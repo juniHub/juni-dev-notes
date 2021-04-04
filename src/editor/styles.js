@@ -127,6 +127,7 @@ const styles = theme => ( {
     width: '95%',
     height: '80px',
     color: '#f582ae',
+
   
    
       
@@ -135,6 +136,7 @@ const styles = theme => ( {
   selectCategory: {
  
     color: '#f582ae !important',
+    backgroundColor: '#232946',
   }
 
 });
