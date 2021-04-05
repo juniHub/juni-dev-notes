@@ -79,9 +79,9 @@ const styles = theme => ({
     width: '100%',
     margin: '0.5rem',
     padding: '0.5rem',
-    height: '60px',
+    height: '80px',
     outline: 'none',
-    minWidth: '280px',
+    minWidth: '300px',
   
     border: 'dashed 3px #f582ae',
     '&:focus': {
@@ -97,8 +97,8 @@ const styles = theme => ({
     backgroundColor: '#f582ae',
     borderRadius: '20px',
     color: '#001858',
-    height: '60px',
-    minWidth: '280px',
+    height: '80px',
+    minWidth: '300px',
    
     '&:hover': {
       backgroundColor: '#8bd3dd',
@@ -165,12 +165,14 @@ const styles = theme => ({
 
   
   formControl: {
-    width: '90%',
+    width: '100%',
     margin: '0.5rem',
-    marginTop: '2rem',
     padding: '0.5rem',
-    height: '100px',
+    height: '80px',
     outline: 'none',
+    minWidth: '300px',
+  
+  
     background: '#fef6e4',
   
     border: 'dashed 3px #f582ae',

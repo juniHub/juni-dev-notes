@@ -1,3 +1,4 @@
+import { fade } from '@material-ui/core/styles';
 
 const drawerWidth = 300;
 
@@ -76,6 +77,23 @@ const appStyle = ( theme ) => ( {
     padding: '2rem',
     fontSize: "30px"
  
+  },
+
+  createButton: {
+
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    boxSizing: 'border-box',
+    border: 'none',
+    marginRight: '1rem',
+   
+    textAlign: 'center',
+
+    '&:hover': {
+      backgroundColor: fade(theme.palette.common.white, 0.25),
+    },
+    
   }
 
 } );

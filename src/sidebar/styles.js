@@ -52,6 +52,22 @@ const styles = theme => ( {
      
     
   },
+
+  searchArea: {
+    
+    width: '94%',
+    margin: '0.5rem',
+    marginTop: '2rem',
+    padding: '0.5rem',
+    height: '200px',
+    outline: 'none',
+  
+    border: 'dashed 3px #f582ae',
+    '&:focus': {
+      outline: '5px solid #f582ae'
+    }
+ 
+  },
     
   search: {
     border: '3px solid #eebbc3',
@@ -104,6 +120,52 @@ const styles = theme => ( {
     height: '100%',
 
   },
+
+   
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 200,
+    boxSizing: 'border-box',
+    border: 'none',
+    
+    padding: '2.6rem',
+    height: '60px',
+    width: '100%',
+    backgroundColor: '#fef6e4',
+   
+    textAlign: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+   
+  },
+    
+    
+  categories: {
+  
+    boxSizing: 'border-box',
+    fontSize: '25px',
+    textAlign: 'center',
+    width: '95%',
+    height: '80px',
+    color: '#f582ae',
+
+  
+   
+      
+  },
+
+  selectCategory: {
+ 
+    color: '#f582ae !important',
+    backgroundColor: '#232946',
+  },
+
+   heading: {
+    padding: '1rem',
+    color: '#232946 !important',
+  },
+   
 
 
 

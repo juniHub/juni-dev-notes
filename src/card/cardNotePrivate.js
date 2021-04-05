@@ -7,7 +7,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { Button } from '@material-ui/core';
-import SidebarItemComponent from '../sidebaritem/sidebarItem';
+import SidebarItemComponent from '../sidebarItem/sidebarItem';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import SendIcon from '@material-ui/icons/Send';
@@ -44,28 +44,20 @@ class CardComponentPrivate extends React.Component {
     filteredNotes = notes.filter((note) => {return note.title.toLowerCase().indexOf(this.state.searchTerm.toLowerCase()) !== -1 });
 
       return(
-        <div className={classes.cardRoot}>
-           <div className={classes.search}>
-            <div className={classes.searchIcon}>
-            <SearchIcon />
-       
-            </div>
-            <InputBase
-              placeholder="Search Title…"
-              type='text'
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-              onChange={this.updateSearch.bind(this)}
-              value = {this.state.searchTerm}
-            />
-          </div>
+        <div className={ classes.cardRoot }>
+          
 
-          {auth().currentUser === null?null:
+        <div className={classes.inputContainer}>
+        
+        <input 
+                  className={classes.newNoteInput}
+                  placeholder='Enter Note Title'
+                  onChange={this.updateTitle.bind(this)}
+                  type='text'
+                  value={this.state.title}>
+        </input>
+    
 
-        <div>
         <FormControl className={classes.formControl}>
         <InputLabel className={ classes.heading } id="categories"><CategoryIcon/>Categories</InputLabel>
         <Select className={ classes.categories }
@@ -88,30 +80,41 @@ class CardComponentPrivate extends React.Component {
            <MenuItem className={ classes.selectCategory } value="Tutorial">Tutorial</MenuItem>
           <MenuItem className={ classes.selectCategory } value="Open Source">Open Source</MenuItem>
           <MenuItem className={ classes.selectCategory } value="Others">Others</MenuItem>
-        </Select>
-        </FormControl>
-
-           <FormControl className={classes.inputContainer}>
-                <input 
-                  className={classes.newNoteInput}
-                  placeholder='Enter Note Title'
-                  onChange={this.updateTitle.bind(this)}
-                  type='text'
-                  value={this.state.title}>
-                </input>
-                <Button 
+          </Select>
+     
+         </FormControl>
+            
+          <Button 
                   className={classes.newNoteSubmitBtn}
                   onClick={this.newNote.bind(this)}>
                   <div className={classes.sendIcon}>
                     <SendIcon />
-       
                   </div>
-                  Submit</Button>
-            </FormControl>
-              
+                  Submit
+                  
+          </Button>
+
 
         </div>
-    }
+
+          
+           <div className={classes.search}>
+            <div className={classes.searchIcon}>
+            <SearchIcon />
+       
+            </div>
+            <InputBase
+              placeholder="Search Title…"
+              type='text'
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+              onChange={this.updateSearch.bind(this)}
+              value = {this.state.searchTerm}
+            />
+          </div>
            
          <div className={classes.cardContainer}>
             {

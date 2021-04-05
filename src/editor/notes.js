@@ -11,7 +11,7 @@ class Notes extends React.Component {
   constructor() {
     super();
     this.state = {
-      category:'All',
+      category:'',
       text: '',
       title: '',
       id: '',

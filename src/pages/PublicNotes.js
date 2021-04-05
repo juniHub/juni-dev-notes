@@ -2,18 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import CardComponentPublic from '../card/cardNotePublic';
-
 import CategoryPublic from '../sidebar/categoriesPublic';
-
 import Notes from '../editor/notes';
-import AppBar from '@material-ui/core/AppBar';
 
+import AppBar from '@material-ui/core/AppBar';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-
 import MenuIcon from '@material-ui/icons/Menu';
-
 import HomeIcon from '@material-ui/icons/Home';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -83,7 +79,7 @@ class PublicNotes extends React.Component {
             className={classes.menuButton}
           >
               <MenuIcon />
-              Categories
+              Search
           </IconButton>
             <Typography className={ classes.brandTitle } variant="h6" noWrap>
             <Link className={classes.linkLink} to="/"><HomeIcon/> Home </Link> 
@@ -129,7 +125,7 @@ class PublicNotes extends React.Component {
           selectedNoteIndex={this.state.selectedNoteIndex}
           notes={this.state.notes}
          >
-              </Notes> :
+         </Notes> :
               <div style={{marginTop: "3rem"}}>
                 <CardComponentPublic
                   selectedNoteIndex={ this.state.selectedNoteIndex }

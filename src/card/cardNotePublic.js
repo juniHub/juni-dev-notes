@@ -7,7 +7,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-import SidebarItemComponentPublic from '../sidebaritem/sidebarItemPublic';
+import SidebarItemComponentPublic from '../sidebarItem/sidebarItemPublic';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 
@@ -17,6 +17,7 @@ class CardComponentPublic extends React.Component {
   constructor() {
     super();
     this.state = {
+      category: "",
       title: "",
       searchTerm: "",
       userName: auth().currentUser && auth().currentUser.displayName !== null? auth().currentUser.displayName: auth().currentUser && auth().currentUser.displayName === null? auth().currentUser.email:"Please log in to see the post's author",

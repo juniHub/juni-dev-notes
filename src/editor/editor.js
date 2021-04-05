@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ReactQuill, {Quill} from 'react-quill';
 import "react-quill/dist/quill.snow.css";
 
@@ -13,6 +14,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import CategoryIcon from '@material-ui/icons/Category';
+
 
 import '../App.css';
 
@@ -62,7 +64,7 @@ class EditorComponent extends React.Component {
   constructor() {
     super();
     this.state = {
-      category:'All',
+      category:'',
       text: '',
       title: '',
       id: '',
@@ -96,6 +98,7 @@ class EditorComponent extends React.Component {
 
     return(
       <div className={ classes.editorContainer }>
+       
         <FormControl className={classes.formControl}>
         <InputLabel className={ classes.heading } id="categories"><CategoryIcon/>Categories</InputLabel>
         <Select className={ classes.categories }

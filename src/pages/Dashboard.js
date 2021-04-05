@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 
 import Category from '../sidebar/categories';
 import CardComponentPrivate from '../card/cardNotePrivate';
-
 import EditorComponent from '../editor/editor';
-import AppBar from '@material-ui/core/AppBar';
 
+import AppBar from '@material-ui/core/AppBar';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
@@ -34,6 +33,8 @@ class Dashboard extends React.Component {
       notes: null,
     
       mobileOpen: false,
+      newNote: false,
+    
    
     };
    
@@ -42,6 +43,13 @@ class Dashboard extends React.Component {
    handleDrawerToggle = async () => {
     await this.setState({
       mobileOpen: !this.state.mobileOpen
+    });
+   };
+  
+  createNote = async () => {
+    await this.setState({
+      newNote: !this.state.newNote,
+     
     });
    };
 
@@ -84,12 +92,20 @@ class Dashboard extends React.Component {
             className={classes.menuButton}
             >
             <MenuIcon />
-             Categories
-           
-          </IconButton>
+             Search
+            </IconButton>
             <Typography className={ classes.brandTitle } variant="h6" noWrap>
             <Link className={classes.linkLink} to="/"><HomeIcon/> Home </Link> 
-          </Typography>
+            </Typography>
+
+          <div className={classes.createButton}>
+          <Button
+            variant="outlined"
+            color="inherit"
+            onClick={ this.createNote }>
+           Create/ Edit Note
+            </Button>
+        </div>
             <Button color="inherit" onClick={() => auth().signOut()}><Link className={classes.linkLink} to="/"> Logout </Link></Button>
         </Toolbar>
         </AppBar>
@@ -125,13 +141,9 @@ class Dashboard extends React.Component {
         <main className={classes.content}>
         <div className={classes.toolbar} />
         {
-          this.state.selectedNote?
-          <EditorComponent selectedNote={this.state.selectedNote}
-          selectedNoteIndex={this.state.selectedNoteIndex}
-          notes={this.state.notes}
-          noteUpdate={this.noteUpdate}>
-
-          </EditorComponent> :
+         
+          this.state.newNote ?
+                
          <div style={{marginTop: "3rem"}}>
           <CardComponentPrivate
           selectedNoteIndex={this.state.selectedNoteIndex}
@@ -139,11 +151,33 @@ class Dashboard extends React.Component {
           deleteNote={this.deleteNote}
           selectNote={this.selectNote}
           newNote={this.newNote}>
-          </CardComponentPrivate>
-           
-          </div>
+          </CardComponentPrivate> 
+    
+          </div> :
+              
+          this.state.selectedNote ?
+          <EditorComponent selectedNote={this.state.selectedNote}
+          selectedNoteIndex={this.state.selectedNoteIndex}
+          notes={this.state.notes}
+          noteUpdate={this.noteUpdate}>
 
+          </EditorComponent> :
+          
+                
+          <div style={{marginTop: "3rem"}}>
+          <CardComponentPrivate
+          selectedNoteIndex={this.state.selectedNoteIndex}
+          notes={this.state.notes}
+          deleteNote={this.deleteNote}
+          selectNote={this.selectNote}
+          newNote={this.newNote}>
+          </CardComponentPrivate> 
+    
+          </div>
+ 
           }
+
+
           </main>
       </div>
     

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Dashboard from './pages/Dashboard';
+
 import Home from './pages/Home';
 import PublicNotes from './pages/PublicNotes';
 
@@ -88,7 +89,7 @@ class App extends Component
           <Switch>
             <Route exact path="/" component={Home} />
             <Route
-              exact path="/allnotes"
+              exact path="/allNotes"
               component={PublicNotes}
             />
 
@@ -97,6 +98,7 @@ class App extends Component
               authenticated={this.state.authenticated}
               component={Dashboard}
             />
+
             <PublicRoute
               path="/signup"
               authenticated={this.state.authenticated}

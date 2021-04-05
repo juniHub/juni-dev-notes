@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import List from '@material-ui/core/List';
 import { Divider, Button } from '@material-ui/core';
-import SidebarItemComponent from '../sidebaritem/sidebarItem';
+import SidebarItemComponent from '../sidebarItem/sidebarItem';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import SendIcon from '@material-ui/icons/Send';
@@ -53,8 +53,6 @@ class SidebarComponent extends React.Component {
             />
           </div>
 
-          {auth().currentUser === null?null:
-
               <div>
                 <input 
                   className={classes.newNoteInput}
@@ -63,17 +61,16 @@ class SidebarComponent extends React.Component {
                   type='text'
                   value={this.state.title}>
                 </input>
-                <Button 
+              <Button 
                   className={classes.newNoteSubmitBtn}
                   onClick={this.newNote.bind(this)}>
                   <div className={classes.sendIcon}>
                     <SendIcon />
-       
                   </div>
-                  Submit</Button>
+                  Submit
+              </Button>
               </div>
-    }
-           
+  
           <List>
               {
                 filteredNotes.map((_note, _index) => {
