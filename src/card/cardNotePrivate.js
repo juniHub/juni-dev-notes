@@ -7,7 +7,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { Button } from '@material-ui/core';
-import SidebarItemComponent from '../sidebarItem/sidebarItem';
+import SidebarItemComponent from '../sidebaritem/sidebarItem';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import SendIcon from '@material-ui/icons/Send';

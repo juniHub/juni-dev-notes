@@ -7,7 +7,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-import SidebarItemComponentPublic from '../sidebarItem/sidebarItemPublic';
+import SidebarItemComponentPublic from '../sidebaritem/sidebarItemPublic';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 

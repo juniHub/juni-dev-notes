@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import List from '@material-ui/core/List';
 import { Divider } from '@material-ui/core';
-import CategoryItemPublic from '../sidebarItem/categoryItemPublic';
+import CategoryItemPublic from '../sidebaritem/categoryItemPublic';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 

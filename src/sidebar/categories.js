@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import List from '@material-ui/core/List';
 import { Divider } from '@material-ui/core';
-import CategoryItem from '../sidebarItem/categoryItem';
+import CategoryItem from '../sidebaritem/categoryItem';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 
