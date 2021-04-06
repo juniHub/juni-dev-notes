@@ -12,7 +12,7 @@ const styles = theme => ( {
     display: 'flex',
     alignItems: 'center',
     
-    borderRadius: '30px',
+    borderRadius: '40px',
     padding: '1.5rem',
    
  

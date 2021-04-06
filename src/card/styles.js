@@ -35,7 +35,7 @@ const styles = theme => ({
 
   cardContent: {
   
-    minWidth: "250px",
+    minWidth: "300px",
     width: '60%',
     margin: '0.5rem',
     padding: '0.5rem',
@@ -95,7 +95,7 @@ const styles = theme => ({
     margin: '0.5rem',
     padding: '0.5rem',
     backgroundColor: '#f582ae',
-    borderRadius: '20px',
+    borderRadius: '35px',
     color: '#001858',
     height: '80px',
     minWidth: '300px',
@@ -113,13 +113,15 @@ const styles = theme => ({
     minWidth: '300px',
     border: '3px solid #eebbc3',
     position: 'relative',
+    margin: '0.5rem',
+    padding: '0.5rem',
     
     backgroundColor: fade(theme.palette.common.white, 0.15),
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-    margin: '0.5rem',
-    width: '90%',
+   
+    width: '80%',
     
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(1),

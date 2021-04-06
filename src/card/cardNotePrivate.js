@@ -52,7 +52,7 @@ class CardComponentPrivate extends React.Component {
         
         <input 
                   className={classes.newNoteInput}
-                  placeholder='Enter Note Title'
+                  placeholder='New Note Title'
                   onChange={this.updateTitle.bind(this)}
                   type='text'
                   value={this.state.title}>
