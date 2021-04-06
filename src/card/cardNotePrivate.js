@@ -17,12 +17,13 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import CategoryIcon from '@material-ui/icons/Category';
 import { auth } from '../services/firebase';
+import Chip from '@material-ui/core/Chip';
 
 class CardComponentPrivate extends React.Component {
   constructor() {
     super();
     this.state = {
-      category: "",
+    
       title: "",
       searchTerm: "",
       userName: auth().currentUser && auth().currentUser.displayName !== null? auth().currentUser.displayName: auth().currentUser && auth().currentUser.displayName === null? auth().currentUser.email:"Please log in to see the post's author",
@@ -129,7 +130,11 @@ class CardComponentPrivate extends React.Component {
                       <Card key={ _index } className={ classes.cardContent }>
                         <CardContent >
                 
-                          <Typography className={ classes.cardBody } variant="body2" component="p">
+                            <Typography className={ classes.cardBody } variant="body2" component="p">
+                              <Chip
+                              className={classes.chip}
+                              label={_note.category}
+                              clickable />
                             <SidebarItemComponent
                               _note={ _note }
                               _index={ _index }

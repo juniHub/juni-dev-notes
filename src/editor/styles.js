@@ -137,6 +137,13 @@ const styles = theme => ( {
  
     color: '#f582ae !important',
     backgroundColor: '#232946',
+  },
+
+   
+  chip: {
+    margin: '1rem',
+    float: 'left',
+    background: "#f582ae",
   }
 
 });

@@ -209,7 +209,11 @@ const styles = theme => ({
   },
    
    
-
+  chip: {
+    margin: '1rem',
+    float: 'left',
+    background: "#f582ae",
+  }
 
 
 });

@@ -3,6 +3,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import parse from 'html-react-parser';
+import Chip from '@material-ui/core/Chip';
 
 import '../App.css';
 
@@ -52,8 +53,12 @@ class Notes extends React.Component {
        
         </div>
 
-         <h6 style={{color: '#8bd3dd'}}>Category: {this.state.category}</h6>
+        <Chip
+                      className={classes.chip}
+                      label={this.state.category}
+                      clickable />
 
+        
         <div className={classes.noteContent}>
 
         

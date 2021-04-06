@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import SidebarItemComponentPublic from '../sidebaritem/sidebarItemPublic';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
+import Chip from '@material-ui/core/Chip';
 
 import { auth } from '../services/firebase';
 
@@ -17,7 +18,7 @@ class CardComponentPublic extends React.Component {
   constructor() {
     super();
     this.state = {
-      category: "",
+      
       title: "",
       searchTerm: "",
       userName: auth().currentUser && auth().currentUser.displayName !== null? auth().currentUser.displayName: auth().currentUser && auth().currentUser.displayName === null? auth().currentUser.email:"Please log in to see the post's author",
@@ -64,16 +65,26 @@ class CardComponentPublic extends React.Component {
                 <Card key={ _index } className={classes.cardContent}>
                 <CardContent >
                 
-                    <Typography className={classes.cardBody} variant="body2" component="p">
+                      <Typography className={ classes.cardBody } variant="body2" component="p">
+                            
+                      <Chip
+                      className={classes.chip}
+                      label={_note.category}
+                      clickable />
+          
+
                       <SidebarItemComponentPublic
                         _note={_note}
                         _index={_index}
                         selectedNoteIndex={selectedNoteIndex}
                         selectNote={this.selectNote}
                         >
-                        </SidebarItemComponentPublic>
-                              
+                      </SidebarItemComponentPublic>
+                   
                     </Typography>
+                        
+
+
                             </CardContent>
                         </Card>
                     )

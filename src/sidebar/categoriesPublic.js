@@ -52,14 +52,14 @@ class CategoryPublic extends React.Component {
 
       return(
         <div className={ classes.sidebarContainer }>
-          <div>
+          <div className={classes.searchArea}>
            <div className={classes.search}>
             <div className={classes.searchIcon}>
             <SearchIcon />
        
             </div>
             <InputBase
-              placeholder="Search Category…"
+              placeholder="Search Title…"
               type='text'
               classes={{
                 root: classes.inputRoot,

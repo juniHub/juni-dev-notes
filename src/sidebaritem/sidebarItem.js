@@ -7,9 +7,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 //import { removeHTMLTags } from '../helpers';
 import { auth } from '../services/firebase';
 
-import { Alert, AlertTitle } from '@material-ui/lab';
-
-
 class SidebarItemComponent extends React.Component {
 
   render() {
