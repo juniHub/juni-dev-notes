@@ -13,7 +13,7 @@ class HomePage extends Component {
         <section className="welcome-banner">
           <div className="jumbotron jumbotron-fluid py-5">
             <div className="container text-center py-5">
-              <h1 className="display-5">Welcome to <Link className='brandName' to="/login">juniDevNote</Link></h1>
+              <h1 className="display-5">Welcome to <Link className='brandName' to="/login">juniNote</Link></h1>
               <p className="lead">A great place to take notes and book mark for ideas and inspiration!</p>
               <div className="mt-4">
               {auth().currentUser

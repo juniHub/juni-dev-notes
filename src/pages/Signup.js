@@ -56,7 +56,7 @@ export default class SignUp extends Component {
         <form className="mt-5 py-5 px-5" onSubmit={this.handleSubmit}>
           <h1>
             Sign Up to
-          <Link className="title ml-2 brandName" to="/">juniDevNote</Link>
+          <Link className="title ml-2 brandName" to="/">juniNote</Link>
           </h1>
         
           <div className="form-group">

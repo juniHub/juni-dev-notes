@@ -127,9 +127,6 @@ const styles = theme => ( {
     width: '95%',
     height: '80px',
     color: '#f582ae',
-
-  
-   
       
   },
 

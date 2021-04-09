@@ -62,7 +62,7 @@ export default class Login extends Component {
           <h1>
             Login to
             <Link className="title ml-2 brandName" to="/">
-              juniDevNote
+              juniNote
             </Link>
           </h1>
 
