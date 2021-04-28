@@ -10,7 +10,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
-import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -91,7 +91,7 @@ class Dashboard extends React.Component {
             onClick={this.handleDrawerToggle}
             className={classes.menuButton}
             >
-            <MenuIcon />
+            <SearchIcon />
              Search
             </IconButton>
             <Typography className={ classes.brandTitle } variant="h6" noWrap>
