@@ -37,7 +37,7 @@
     <a href="https://github.com/juniHub/juni-dev-notes"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://res.cloudinary.com/dafolrlpj/image/upload/v1619521156/ecommerce/jmlazjvnubyhcx9udqtx.png" target="_blank">View Demo</a>
+    <a href="https://juni-dev-note.netlify.app/" target="_blank">View Demo</a>
     ·
     <a href="https://github.com/juniHub/juni-dev-notes/issues">Report Bug</a>
     ·
@@ -74,12 +74,10 @@
 </details>
 
 
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Juni-juni-dev-notes-screenshot]()
-
+![Juni-juni-dev-notes-screenshot](https://res.cloudinary.com/dafolrlpj/image/upload/v1619521156/ecommerce/jmlazjvnubyhcx9udqtx.png)
 
 
 ### Built With
