@@ -37,7 +37,7 @@
     <a href="https://github.com/juniHub/juni-dev-notes"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="" target="_blank">View Demo</a>
+    <a href="https://res.cloudinary.com/dafolrlpj/image/upload/v1619521156/ecommerce/jmlazjvnubyhcx9udqtx.png" target="_blank">View Demo</a>
     ·
     <a href="https://github.com/juniHub/juni-dev-notes/issues">Report Bug</a>
     ·
@@ -85,11 +85,11 @@
 ### Built With
 
 
-* [ReactJS](
-* [Firebase]()
-* [Quill Editor]()
-* [Material UI]()
-* [Deployed on Netlify]()
+* [ReactJS](https://reactjs.org/)
+* [Firebase](https://firebase.google.com/)
+* [Quill Editor](https://quilljs.com/)
+* [Material UI](https://material-ui.com/)
+* [Deployed on Netlify](https://www.netlify.com/)
 
 
 
@@ -174,7 +174,7 @@ Project Link: [https://github.com/juniHub/juni-dev-notes](https://github.com/jun
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-Inspired by storybook project from []()
+Inspired by evernote clone project from [Zack Wilson (PortEXE)](https://www.youtube.com/watch?v=I250xdtUvy8)
 
 
 
