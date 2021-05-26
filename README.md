@@ -131,7 +131,7 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-_For more examples, please refer to the [Documentation](https://junitiennguyen.gitbook.io/taking-notes). This will be continued for update and maintainance._
+_For more examples, please refer to the [Documentation](https://junitiennguyen.gitbook.io/taking-notes/). This will be continued for update and maintainance._
 
 <!-- ROADMAP -->
 ## Roadmap
