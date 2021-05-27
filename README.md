@@ -158,7 +158,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Juni Nguyen - [hellojuninguyen@gmail.com](hellojuninguyen@gmail.com)
 
-Project Link: [https://github.com/juniHub/juni-dev-notes](https://github.com/juniHub/storybook-app)
+Project Link: [https://github.com/juniHub/juni-dev-notes](https://github.com/juniHub/juni-dev-notes)
 
 <!-- ACKNOWLEDGEMENTS -->
 
