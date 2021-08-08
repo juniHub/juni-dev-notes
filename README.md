@@ -156,7 +156,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Juni Nguyen - [hello Juni](hellojuninguyen@gmail.com)
+Juni Nguyen - [helloJuni](https://hellojuninguyen.netlify.app/)
 
 Project Link: [https://github.com/juniHub/juni-dev-notes](https://github.com/juniHub/juni-dev-notes)
 
