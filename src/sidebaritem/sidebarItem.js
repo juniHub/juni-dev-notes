@@ -4,7 +4,6 @@ import styles from './styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import DeleteIcon from '@material-ui/icons/Delete';
-//import { removeHTMLTags } from '../helpers';
 import { auth } from '../services/firebase';
 
 class SidebarItemComponent extends React.Component {
@@ -28,16 +27,19 @@ class SidebarItemComponent extends React.Component {
                 <ListItemText
                
                   primary={_note.title}
-                  secondary={`Posted by: ${_note.userName}`}
-                  
-                >
+                  secondary={ `Posted by: ${ _note.userName }` }
                  
-                </ListItemText>
+                  
+            >
+            </ListItemText>
+
+         
+            
           </div>
           
             
             {auth().currentUser !== null && _note.currentUserID===auth().currentUser.uid? <DeleteIcon onClick={() => this.deleteNote(_note)}
-              className={classes.deleteIcon}></DeleteIcon> : null
+             className={classes.deleteIcon}></DeleteIcon> : null
             }
         </ListItem>
         : null}

@@ -6,7 +6,7 @@ import List from '@material-ui/core/List';
 import { Divider } from '@material-ui/core';
 import CategoryItem from '../sidebaritem/categoryItem';
 import InputBase from '@material-ui/core/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
+//import SearchIcon from '@material-ui/icons/Search';
 
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -55,12 +55,10 @@ class Category extends React.Component {
         <div className={ classes.sidebarContainer }>
       
 
-           <div className={classes.searchArea}>
+          <div className={ classes.searchArea }>
+          
            <div className={classes.search}>
-            <div className={classes.searchIcon}>
-            <SearchIcon />
-       
-            </div>
+          
 
             <InputBase
               placeholder="Search Title…"

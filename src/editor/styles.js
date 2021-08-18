@@ -14,6 +14,7 @@ const styles = theme => ( {
     textAlign: 'center',
     margin: '2rem',
     marginTop: '6rem',
+   
     
 
   },
@@ -22,7 +23,7 @@ const styles = theme => ( {
   titleInput: {
   
     boxSizing: 'border-box',
-    border: '3px solid #f582ae',
+    
     fontSize: '25px',
     textAlign: 'center',
     width: '100%',
@@ -30,14 +31,17 @@ const styles = theme => ( {
     marginLeft: '20px',
     backgroundColor: '#fef6e4',
     color: '#001858',
+    border: 'none',
    
+    '&:focus': {
+      outline: 'none',
+    },
       
   },
 
   titleHeading: {
   
     boxSizing: 'border-box',
-    border: 'none',
     margin: '0',
     padding: '2.6rem',
     height: '60px',
@@ -47,7 +51,8 @@ const styles = theme => ( {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    
+    border: '2px solid #f582ae',
+    borderRadius: '2rem',
      
   },
 
@@ -66,10 +71,8 @@ const styles = theme => ( {
     justifyContent: 'center',
     margin: '2rem',
     padding: '2rem',
-    border: 'dashed 1px #f582ae'
     
-
-
+ 
   },
 
 
@@ -104,8 +107,7 @@ const styles = theme => ( {
     margin: theme.spacing(1),
     minWidth: 200,
     boxSizing: 'border-box',
-    border: 'none',
-    
+      
     padding: '2.6rem',
     height: '60px',
     width: '100%',
@@ -115,6 +117,8 @@ const styles = theme => ( {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    border: '2px solid #f582ae',
+     borderRadius: '2rem',
    
   },
     

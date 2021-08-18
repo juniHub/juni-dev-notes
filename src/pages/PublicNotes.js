@@ -77,12 +77,11 @@ class PublicNotes extends React.Component {
             edge="start"
             onClick={this.handleDrawerToggle}
             className={classes.menuButton}
-          >
-              <SearchIcon />
-              Search
+          ><SearchIcon />
+    
           </IconButton>
             <Typography className={ classes.brandTitle } variant="h6" noWrap>
-            <Link className={classes.linkLink} to="/"><HomeIcon/> Home </Link> 
+            <Link className={classes.linkLink} to="/"><HomeIcon/></Link> 
           </Typography>
            
         </Toolbar>
@@ -149,7 +148,8 @@ class PublicNotes extends React.Component {
   componentDidMount = () => {
     firebase
       .firestore()
-      .collection('notes')
+      .collection( 'notes' )
+      .orderBy("timestamp", "desc")
       .onSnapshot(serverUpdate => {
         const notes = serverUpdate.docs.map(_doc => {
           const data = _doc.data();

@@ -12,6 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home';
+import EditIcon from '@material-ui/icons/Edit';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
@@ -31,7 +32,6 @@ class Dashboard extends React.Component {
       selectedNoteIndex: null,
       selectedNote: null,
       notes: null,
-    
       mobileOpen: false,
       newNote: false,
     
@@ -92,10 +92,9 @@ class Dashboard extends React.Component {
             className={classes.menuButton}
             >
             <SearchIcon />
-             Search
             </IconButton>
             <Typography className={ classes.brandTitle } variant="h6" noWrap>
-            <Link className={classes.linkLink} to="/"><HomeIcon/> Home </Link> 
+            <Link className={classes.linkLink} to="/"><HomeIcon/> </Link> 
             </Typography>
 
           <div className={classes.createButton}>
@@ -103,9 +102,10 @@ class Dashboard extends React.Component {
             variant="outlined"
             color="inherit"
             onClick={ this.createNote }>
-           Create/ Edit Note
+            <EditIcon/>
             </Button>
-        </div>
+            </div>
+            
             <Button color="inherit" onClick={() => auth().signOut()}><Link className={classes.linkLink} to="/"> Logout </Link></Button>
         </Toolbar>
         </AppBar>
@@ -187,7 +187,8 @@ class Dashboard extends React.Component {
   componentDidMount = () => {
     firebase
       .firestore()
-      .collection('notes')
+      .collection( 'notes' )
+      .orderBy("timestamp", "desc")
       .onSnapshot(serverUpdate => {
         const notes = serverUpdate.docs.map(_doc => {
           const data = _doc.data();
@@ -203,36 +204,44 @@ class Dashboard extends React.Component {
   noteUpdate = (id, noteObj) => {
     firebase
       .firestore()
-      .collection('notes')
+      .collection( 'notes' )
       .doc(id)
       .update( {
         
+       
         category: noteObj.category,
         title: noteObj.title,
         body: noteObj.body,
-       
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        
       });
   }
-  newNote = async (category,title, userName, currentUserID) => {
+  newNote = async (  category,title, userName, currentUserID) => {
     const note = {
+      
       category: category,
       title: title,
       body: '',
       userName: userName,
       currentUserID: currentUserID,
     };
+
     const newFromDB = await firebase
       .firestore()
-      .collection('notes')
+      .collection( 'notes' )
       .add( {
+       
         category: note.category,
         title: note.title,
         body: note.body,
         userName: note.userName,
         currentUserID: note.currentUserID,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
-      });
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+       
+      } );
+    
+  
+
     const newID = newFromDB.id;
     await this.setState({ notes: [...this.state.notes, note] });
     const newNoteIndex = this.state.notes.indexOf(this.state.notes.filter(_note => _note.id === newID)[0]);

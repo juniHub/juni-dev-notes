@@ -23,9 +23,7 @@ const appStyle = ( theme ) => ( {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
       backgroundColor: '#232946',
-    
-
-         
+  
     },
   },
 

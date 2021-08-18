@@ -27,9 +27,13 @@ class SidebarItemComponentPublic extends React.Component {
                   primary={_note.title}
                   secondary={`Posted by: ${_note.userName}`}
                   
-                >
+                  >
+            
+                
                  
-                </ListItemText>
+          </ListItemText>
+
+              
             </div>
          
         </ListItem>

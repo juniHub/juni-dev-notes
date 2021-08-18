@@ -1,56 +1,27 @@
-import { fade } from '@material-ui/core/styles';
+
 
 const styles = theme => ({
   
-  cardRoot: {
-
-    boxSizing: 'border-box',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    margin: '0',
-    paddingTop: '4rem',
-    paddingBottom: '4rem',
-    minHeight: '100vh',
+  root: {
     background: '#232946',
     color: '#fffffe',
-    overflow: 'auto',
-    
-  
-    
-       
+    flexGrow: 1,
+    padding: "1rem",
+    paddingTop: "2rem",
   },
 
-  cardContainer: {
-
-    display: 'flex',
-    flexWrap: 'wrap',
-    
-    justifyContent: 'space-around',
+  card: {
+    background: '#fef6e4',
     overflow: 'auto',
-
+    boxShadow: '0px 10px 10px 0px rgba(0,0,0,0.16)'
   },
 
   cardContent: {
-  
-    minWidth: "300px",
-    width: '60%',
-    margin: '0.5rem',
-    padding: '0.5rem',
-  
-    
-  },
-
-  cardBody: {
-    border: 'dashed 2px #8bd3dd',
-    minHeight: '200px',
-    background: '#fef6e4',
     width: '100%',
-  },
+    height: '250px',
+    },
  
-
+ 
   sidebarContainer: {
     margin: '0px',
     width: '300px',
@@ -60,8 +31,7 @@ const styles = theme => ({
     overflowY: 'scroll',
     overflowX: 'hidden',
     background: '#232946',
-       
-  },
+   },
 
   inputContainer: {
     display: 'flex',
@@ -82,10 +52,11 @@ const styles = theme => ({
     height: '80px',
     outline: 'none',
     minWidth: '300px',
-  
+    borderRadius:'35px',
+   
     border: 'dashed 3px #f582ae',
     '&:focus': {
-      outline: '5px solid #f582ae'
+      outline: 'none'
     }
   },
  
@@ -108,38 +79,7 @@ const styles = theme => ({
     
   },
     
-  search: {
-
-    minWidth: '300px',
-    border: '3px solid #eebbc3',
-    position: 'relative',
-    margin: '0.5rem',
-    padding: '0.5rem',
-    
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-   
-    width: '80%',
-    
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
-      width: 'auto',
-    },
-   
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: 'white',
-  
-  },
+ 
   inputRoot: {
     color: '#fffffe',
   },
@@ -173,37 +113,36 @@ const styles = theme => ({
     height: '80px',
     outline: 'none',
     minWidth: '300px',
-  
-  
-    background: '#fef6e4',
-  
+    borderRadius: '35px',
     border: 'dashed 3px #f582ae',
     '&:focus': {
-      outline: '5px solid #f582ae'
-    }
+      outline: 'none'
+    },
+    backgroundColor: '#fff'
    
   },
     
     
   categories: {
   
-    
+    boxSizing: 'border-box',
     fontSize: '25px',
     textAlign: 'center',
     width: '95%',
     height: '80px',
     color: '#f582ae',
-  
-   
-      
+    
   },
 
+  
   selectCategory: {
  
     color: '#f582ae !important',
-    background: '#232946',
+    backgroundColor: '#232946',
   },
 
+
+ 
 
    heading: {
     padding: '1rem',

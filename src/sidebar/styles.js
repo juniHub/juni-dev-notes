@@ -71,7 +71,7 @@ const styles = theme => ( {
     
   search: {
     border: '3px solid #eebbc3',
-    position: 'relative',
+    position: 'inline-block',
     
     backgroundColor: fade(theme.palette.common.white, 0.15),
     '&:hover': {
@@ -82,20 +82,11 @@ const styles = theme => ( {
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(1),
       width: 'auto',
+      
     },
    
   },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#001858',
-  
-  },
+
   inputRoot: {
     color: '#001858',
   },

@@ -2,21 +2,22 @@ const styles = theme => ( {
  
 
   listItem: {
+
+    display: "flex",
+    flexDirection: "column",
+  
+    alignItems: 'start',
+    justifyContent: 'space-evenly',
     cursor: 'pointer',
   
     background: '#fef6e4',
     maxWidth: '95%',
-    
-    margin: '0.5rem',
- 
-    display: 'flex',
-    alignItems: 'center',
-    
-    borderRadius: '40px',
-    padding: '1.5rem',
    
- 
-    
+    margin: '0.5rem',
+     
+    borderRadius: '5px',
+    padding: '1.5rem',
+       
     '&:hover': {
      background: '#001858',
      color: '#f582ae',
@@ -28,17 +29,19 @@ const styles = theme => ( {
   },
 
   textSection: {
-    maxWidth: '100%',
+    width: '100%',
+    height :'100%',
  
  
   },  
 
   deleteIcon: {
-    position: 'absolute',
-    right: '20px',
-    top: 'calc(50% - 15px)',
 
-    
+    display: "inline-block",
+    marginTop: '3rem',
+    color :'#fffffe',
+  
+  
   },
 
  

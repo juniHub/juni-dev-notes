@@ -1,16 +1,12 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
-
+import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
-
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { Button } from '@material-ui/core';
 import SidebarItemComponent from '../sidebaritem/sidebarItem';
-import InputBase from '@material-ui/core/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
-import SendIcon from '@material-ui/icons/Send';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
@@ -37,15 +33,13 @@ class CardComponentPrivate extends React.Component {
   render() {
 
     const { notes, classes, selectedNoteIndex } = this.props;
-
-    let filteredNotes = [];
    
     if(notes) {
 
-    filteredNotes = notes.filter((note) => {return note.title.toLowerCase().indexOf(this.state.searchTerm.toLowerCase()) !== -1 });
+    //filteredNotes = notes.filter((note) => {return note.title.toLowerCase().indexOf(this.state.searchTerm.toLowerCase()) !== -1 });
 
       return(
-        <div className={ classes.cardRoot }>
+        <div className={ classes.root }>
           
 
         <div className={classes.inputContainer}>
@@ -60,7 +54,7 @@ class CardComponentPrivate extends React.Component {
     
 
         <FormControl className={classes.formControl}>
-        <InputLabel className={ classes.heading } id="categories"><CategoryIcon/>Categories</InputLabel>
+        <InputLabel className={ classes.heading } id="categories"><CategoryIcon/>Select Category</InputLabel>
         <Select className={ classes.categories }
           labelId="categories"
           id="category"
@@ -89,7 +83,7 @@ class CardComponentPrivate extends React.Component {
                   className={classes.newNoteSubmitBtn}
                   onClick={this.newNote.bind(this)}>
                   <div className={classes.sendIcon}>
-                    <SendIcon />
+                
                   </div>
                   Submit
                   
@@ -97,45 +91,31 @@ class CardComponentPrivate extends React.Component {
 
 
         </div>
-
-          
-           <div className={classes.search}>
-            <div className={classes.searchIcon}>
-            <SearchIcon />
-       
-            </div>
-            <InputBase
-              placeholder="Search Title…"
-              type='text'
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-              onChange={this.updateSearch.bind(this)}
-              value = {this.state.searchTerm}
-            />
-          </div>
            
-         <div className={classes.cardContainer}>
+          <Grid container spacing={2} >
             {
-              filteredNotes.map( ( _note, _index ) =>
+              notes.map( ( _note, _index ) =>
               {
                 
                 return (
-                <>
+           <>
                   {
                     auth ().currentUser !== null && _note.currentUserID === auth().currentUser.uid ?
+                     <Grid item xs={ 12 } sm={ 6 } md={ 4 }>
    
-                      <Card key={ _index } className={ classes.cardContent }>
+                      <Card key={ _index } className={ classes.card }>
                         <CardContent >
                 
-                            <Typography className={ classes.cardBody } variant="body2" component="p">
+                              <Typography className={ classes.cardContent } variant="body2" component="p">
+                                
                               <Chip
                               className={classes.chip}
                               label={_note.category}
-                              clickable />
-                            <SidebarItemComponent
+                                  clickable />
+                                                                
+
+                              <SidebarItemComponent
+                              
                               _note={ _note }
                               _index={ _index }
                               selectedNoteIndex={ selectedNoteIndex }
@@ -145,13 +125,17 @@ class CardComponentPrivate extends React.Component {
                                 
                           </Typography>
                         </CardContent>
-                      </Card> : null
+                        </Card> </Grid> : null
+                         
                     }
+                
+                    
                     </>
                   )
                 })
               }
-              </div>
+              
+              </Grid>
           
         </div>
       );

@@ -4,7 +4,7 @@ import ReactQuill, {Quill} from 'react-quill';
 import "react-quill/dist/quill.snow.css";
 
 import debounce from '../helpers';
-import BorderColorIcon from '@material-ui/icons/BorderColor';
+import EditIcon from '@material-ui/icons/Edit';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import ImageCompress from 'quill-image-compress';
@@ -64,6 +64,7 @@ class EditorComponent extends React.Component {
   constructor() {
     super();
     this.state = {
+     
       category:'',
       text: '',
       title: '',
@@ -74,6 +75,7 @@ class EditorComponent extends React.Component {
 
   componentDidMount = () => {
     this.setState( {
+     
       category: this.props.selectedNote.category,
       text: this.props.selectedNote.body,
       title: this.props.selectedNote.title,
@@ -84,6 +86,7 @@ class EditorComponent extends React.Component {
   componentDidUpdate = () => {
     if(this.props.selectedNote.id !== this.state.id) {
       this.setState( {
+        
         category: this.props.selectedNote.category,
         text: this.props.selectedNote.body,
         title: this.props.selectedNote.title,
@@ -100,7 +103,7 @@ class EditorComponent extends React.Component {
       <div className={ classes.editorContainer }>
        
         <FormControl className={classes.formControl}>
-        <InputLabel className={ classes.heading } id="categories"><CategoryIcon/>Categories</InputLabel>
+        <InputLabel className={ classes.heading } id="categories"><CategoryIcon/>CATEGORIES</InputLabel>
         <Select className={ classes.categories }
           labelId="categories"
           id="category"
@@ -127,8 +130,9 @@ class EditorComponent extends React.Component {
         
 
         <div className={classes.titleHeading}>
-        <BorderColorIcon className={classes.editIcon}></BorderColorIcon>
-       
+          <EditIcon className={ classes.editIcon }></EditIcon>
+          TITLE
+         
         <input
           className={classes.titleInput}
           placeholder='You can edit your note title here'
@@ -175,10 +179,13 @@ class EditorComponent extends React.Component {
    updateCategory = async (txt) => {
     await this.setState({ category: txt });
     this.update();
-  }
+   }
+  
+ 
   
   update = debounce(() => {
     this.props.noteUpdate( this.state.id, {
+    
       category: this.state.category,
       title: this.state.title,
       body: this.state.text

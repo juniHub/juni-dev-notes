@@ -24,13 +24,16 @@ class CategoryItem extends React.Component {
           
           onClick={() => this.selectNote(_note, _index)}>
           
-        <div className={classes.textSection}>
-        
+          <div className={ classes.textSection }>
+            
+               
         <Chip
 
         style={{background: "#f582ae"}}
         label={_note.category}
-        clickable />
+              clickable />
+            
+         
           
           <ListItemText
                

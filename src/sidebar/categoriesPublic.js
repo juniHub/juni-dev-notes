@@ -5,7 +5,7 @@ import List from '@material-ui/core/List';
 import { Divider } from '@material-ui/core';
 import CategoryItemPublic from '../sidebaritem/categoryItemPublic';
 import InputBase from '@material-ui/core/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
+//import SearchIcon from '@material-ui/icons/Search';
 
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -52,12 +52,13 @@ class CategoryPublic extends React.Component {
 
       return(
         <div className={ classes.sidebarContainer }>
-          <div className={classes.searchArea}>
-           <div className={classes.search}>
-            <div className={classes.searchIcon}>
-            <SearchIcon />
+            
+          
+            
+          <div className={ classes.searchArea }>
        
-            </div>
+            <div className={ classes.search }>
+          
             <InputBase
               placeholder="Search Title…"
               type='text'
@@ -68,7 +69,8 @@ class CategoryPublic extends React.Component {
               inputProps={{ 'aria-label': 'search' }}
               onChange={this.updateSearch.bind(this)}
               value = {this.state.searchTerm}
-            />
+              />
+            
             </div>
 
              <FormControl className={classes.formControl}>
