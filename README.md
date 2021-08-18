@@ -73,7 +73,7 @@
 
 ## About The Project
 
-![Juni-juni-dev-notes-screenshot](https://res.cloudinary.com/dafolrlpj/image/upload/v1619521156/ecommerce/jmlazjvnubyhcx9udqtx.png)
+![Juni-juni-dev-notes-screenshot](https://res.cloudinary.com/dafolrlpj/image/upload/v1627304394/gallery/xd95iziw5vypx7lpymoc.png)
 
 ### Built With
 
@@ -156,9 +156,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Juni Nguyen - [hellojuninguyen@gmail.com](hellojuninguyen@gmail.com)
+Juni Nguyen - [helloJuni](https://hellojuninguyen.netlify.app/)
 
-Project Link: [https://github.com/juniHub/juni-dev-notes](https://github.com/juniHub/storybook-app)
+Project Link: [https://github.com/juniHub/juni-dev-notes](https://github.com/juniHub/juni-dev-notes)
 
 <!-- ACKNOWLEDGEMENTS -->
 
