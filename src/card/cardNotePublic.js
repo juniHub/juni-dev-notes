@@ -10,6 +10,7 @@ import Chip from '@material-ui/core/Chip';
 
 import { auth } from '../services/firebase';
 
+
 class CardComponentPublic extends React.Component {
   constructor() {
     super();
@@ -19,7 +20,7 @@ class CardComponentPublic extends React.Component {
       searchTerm: "",
       userName: auth().currentUser && auth().currentUser.displayName !== null? auth().currentUser.displayName: auth().currentUser && auth().currentUser.displayName === null? auth().currentUser.email:"Please log in to see the post's author",
       currentUserID: auth().currentUser? auth().currentUser.uid:"",
-     
+      
     };
    
   }
@@ -36,9 +37,8 @@ class CardComponentPublic extends React.Component {
 
       return(
         <div className={ classes.root }>
-
-        <h3>ALL PUBLIC NOTES</h3>
       
+         <h3>ALL PUBLIC NOTES</h3>
                
           <Grid container spacing={2} >
               {
@@ -53,7 +53,7 @@ class CardComponentPublic extends React.Component {
                       <Chip
                       className={classes.chip}
                       label={_note.category}
-                      clickable />
+                              clickable />
                             
                     
                        

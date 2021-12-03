@@ -1,5 +1,4 @@
 
-
 const styles = theme => ({
   
   root: {
@@ -13,12 +12,14 @@ const styles = theme => ({
   card: {
     background: '#fef6e4',
     overflow: 'auto',
-    boxShadow: '0px 10px 10px 0px rgba(0,0,0,0.16)'
+    boxShadow: '0px 10px 10px 0px rgba(0,0,0,0.16)',
+   
   },
 
   cardContent: {
     width: '100%',
-    height: '250px',
+    height: '100%',
+    border: '2px dashed pink'
     },
  
  

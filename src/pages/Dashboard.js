@@ -48,7 +48,6 @@ class Dashboard extends React.Component {
   goToDashBoard = async () => {
     await this.setState({
       dashboard: true,
-     
     });
    };
 
@@ -56,7 +55,7 @@ class Dashboard extends React.Component {
   {
 
     const { classes } = this.props;
-  
+    
   
     const drawer = (
     <div>
@@ -67,7 +66,8 @@ class Dashboard extends React.Component {
           selectedNoteIndex={this.state.selectedNoteIndex}
           notes={this.state.notes}
         
-          selectNote={this.selectNote}>
+          selectNote={this.selectNote}
+          deleteNote={this.deleteNote}>
          
 
         </Category>
@@ -100,8 +100,9 @@ class Dashboard extends React.Component {
           <Button
             variant="outlined"
             color="inherit"
-            onClick={ this.goToDashBoard }>
-            DASHBOARD
+            onClick={ this.goToDashBoard}>
+
+            Dashboard
             </Button>
             </div>
             
@@ -138,23 +139,31 @@ class Dashboard extends React.Component {
         </Hidden>
       </nav>
         <main className={classes.content}>
-        <div className={classes.toolbar} />
-        {
-         
-          this.state.dashboard ?
-                
-         <div style={{marginTop: "3rem"}}>
+               
+                       
+          { 
+          this.state.dashboard?
+            
+                              
+          <div style={{marginTop: "3rem"}}>
+
           <CardComponentPrivate
-          selectedNoteIndex={this.state.selectedNoteIndex}
-          notes={this.state.notes}
-          deleteNote={this.deleteNote}
-          selectNote={this.selectNote}
-          newNote={this.newNote}>
+
+            selectedNoteIndex={this.state.selectedNoteIndex}
+            notes={this.state.notes}
+            deleteNote={this.deleteNote}
+            selectNote={this.selectNote}
+            newNote= {this.newNote}
+            
+          >
+
           </CardComponentPrivate> 
-    
-          </div> :
-              
-          this.state.selectedNote ?
+
+          </div>:
+
+            
+          this.state.selectedNote?
+
           <EditorComponent 
           selectedNote={this.state.selectedNote}
           selectedNoteIndex={this.state.selectedNoteIndex}
@@ -162,21 +171,27 @@ class Dashboard extends React.Component {
           noteUpdate={this.noteUpdate}>
 
           </EditorComponent> :
-          
-                
+
+            
           <div style={{marginTop: "3rem"}}>
+
           <CardComponentPrivate
+          
           selectedNoteIndex={this.state.selectedNoteIndex}
           notes={this.state.notes}
           deleteNote={this.deleteNote}
           selectNote={this.selectNote}
-          newNote={this.newNote}>
+          newNote= {this.newNote}
+          >
+
           </CardComponentPrivate> 
     
           </div>
- 
+
+          
           }
 
+ 
 
           </main>
       </div>
@@ -200,7 +215,7 @@ class Dashboard extends React.Component {
       });
   }
 
-  selectNote = (note, index) => this.setState({ selectedNoteIndex: index, selectedNote: note });
+  selectNote = (note, index) => this.setState({ selectedNoteIndex: index, selectedNote: note , dashboard: false});
   noteUpdate = (id, noteObj) => {
     firebase
       .firestore()
@@ -224,6 +239,7 @@ class Dashboard extends React.Component {
       body: '',
       userName: userName,
       currentUserID: currentUserID,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     };
 
     const newFromDB = await firebase

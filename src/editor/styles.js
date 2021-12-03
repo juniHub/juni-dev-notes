@@ -4,8 +4,7 @@ const styles = theme => ( {
   
 
   editorContainer: {
-    
- 
+     
     boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'column',
@@ -14,9 +13,8 @@ const styles = theme => ( {
     textAlign: 'center',
     margin: '2rem',
     marginTop: '6rem',
+    background: '#fef6e4',
    
-    
-
   },
 
 
@@ -42,17 +40,17 @@ const styles = theme => ( {
   titleHeading: {
   
     boxSizing: 'border-box',
-    margin: '0',
-    padding: '2.6rem',
+    marginTop: '2rem',
+    padding: '2rem',
     height: '60px',
-    width: '100%',
+    width: '90%',
    
     textAlign: 'center',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    border: '2px solid #f582ae',
-    borderRadius: '2rem',
+    borderBottom: '2px dashed #f582ae',
+ 
      
   },
 
@@ -83,7 +81,7 @@ const styles = theme => ( {
     justifyContent: 'center',
     boxSizing: 'border-box',
     border: 'none',
-    marginTop: '2rem',
+    margin: '2rem',
     fontSize: '24px',
     textAlign: 'center',
 
@@ -104,21 +102,17 @@ const styles = theme => ( {
  
 
     formControl: {
-    margin: theme.spacing(1),
+   
     minWidth: 200,
     boxSizing: 'border-box',
-      
-    padding: '2.6rem',
+    margin: '2rem', 
+    padding: '2rem',
     height: '60px',
-    width: '100%',
+    
     backgroundColor: '#fef6e4',
-   
-    textAlign: 'center',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    border: '2px solid #f582ae',
-     borderRadius: '2rem',
+ 
+  
+     
    
   },
     
@@ -128,7 +122,6 @@ const styles = theme => ( {
     boxSizing: 'border-box',
     fontSize: '25px',
     textAlign: 'center',
-    width: '95%',
     height: '80px',
     color: '#f582ae',
       

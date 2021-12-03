@@ -36,8 +36,7 @@ class CardComponentPrivate extends React.Component {
    
     if(notes) {
 
-    //filteredNotes = notes.filter((note) => {return note.title.toLowerCase().indexOf(this.state.searchTerm.toLowerCase()) !== -1 });
-
+   
       return(
         <div className={ classes.root }>
           
@@ -73,7 +72,7 @@ class CardComponentPrivate extends React.Component {
           <MenuItem className={ classes.selectCategory } value="Api">Api</MenuItem>
           <MenuItem className={ classes.selectCategory } value="Portfolio">Portfolio</MenuItem>
            <MenuItem className={ classes.selectCategory } value="Tutorial">Tutorial</MenuItem>
-          <MenuItem className={ classes.selectCategory } value="Open Source">Open Source</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="Open Sources">Open Sources</MenuItem>
           <MenuItem className={ classes.selectCategory } value="Others">Others</MenuItem>
           </Select>
      
@@ -92,7 +91,6 @@ class CardComponentPrivate extends React.Component {
 
         </div>
 
-        
         <h3>ALL YOUR NOTES</h3>
            
           <Grid container spacing={2} >
@@ -167,11 +165,13 @@ class CardComponentPrivate extends React.Component {
 
 
   newNote = () => {
-    if(this.state.title !== ""){
+    if(this.state.title !== "")
+    {
     this.props.newNote(this.state.category, this.state.title, this.state.userName, this.state.currentUserID);
     this.setState({ title: "", category :""});
     }
     else{
+      
       this.props.newNote(this.state.category, "default title without name", this.state.userName, this.state.currentUserID);
       
     }
@@ -179,6 +179,8 @@ class CardComponentPrivate extends React.Component {
 
   selectNote = (n, i) => this.props.selectNote(n, i);
   deleteNote = (note) => this.props.deleteNote(note);
+
+  
 
 }
 
