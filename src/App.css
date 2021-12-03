@@ -1,119 +1,137 @@
 * {
-   box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body {
+
+
+ margin: 0;
+ padding: 0;
+ background: #232946;
  
- 
-  margin: 0;
-  padding: 0;
-  background: #fef6e4;
 
 }
 
 
 nav{
-  background: #232946 ;
-  color: #fffffe;
+ background: #232946 ;
+ color: #fffffe;
 }
 
 
 .quill {
 
-  height: 100%;
-  width: 100%;
-  box-shadow: 0 10px 6px -6px #777;
-    
+ height: 100%;
+ width: 90%;
+ box-shadow: 0 10px 6px -6px #777;
+   
 }
 
 .ql-snow.ql-toolbar {
-  display: inline-block;
-  background: #8bd3dd;
-  min-height: 60px;
-  width: 100%;
-  margin-top: 2rem;
+ display: inline-block;
+ background: #8bd3dd;
+ min-height: 60px;
+ margin-top: 2rem;
+ width: 90%;
 
- 
+
 }
 
 .ql-editor {
-  cursor: text;
-  min-height: 18em;
-  text-align: center;
-  overflow: auto;
-  font-size: 20px;
-  background: #fef6e4;
-   
+ cursor: text;
+ min-height: 18em;
+ text-align: center;
+ overflow: auto;
+ font-size: 20px;
+ background: #fef6e4;
+  
 
 
 }
 .MuiListItem-root.Mui-selected {
-  opacity: 0.8;
-  background: #001858 !important;
-  color: #f582ae;
+ opacity: 0.8;
+ background: #001858 !important;
+ color: #f582ae;
 
- 
+
 }
 
 .MuiListItemText-secondary{
-  color: gray !important;
-  
+ color: gray !important;
+ 
 }
 
 .form-control {
-  width: 60%;
+ width: 60%;
 }
 
 .form-control:focus {
-  box-shadow: none;
+ box-shadow: none;
 }
 
 .btn {
-  margin-top: 10px;
+ margin-top: 10px;
 }
 
 .btn-submit {
-  background-color: #2e7d32;
-  color: white;
+ background-color: #2e7d32;
+ color: white;
 }
 
 .jumbotron {
 
-  background: transparent;
-  border: dashed 2px #8bd3dd;
+ background: #fef6e4;
+ height: 100vh;
+ width: 100%;
+ margin: auto;
  
-  margin-top: 8rem !important;
-  margin: auto;
-  max-width: 600px;
-  	-webkit-box-shadow: 0 10px 6px -6px #777;
-  	-moz-box-shadow: 0 10px 6px -6px #777;
-  	box-shadow: 0 10px 6px -6px #777;
+
+
 }
 
+.svg-home{
+
+ background: url("./images/notebg.svg") no-repeat  center/contain;
+ min-height: 400px;
+
+}
+
+.svg-signin{
+
+ background: url("./images/signInbg.svg") no-repeat  center/contain;
+ min-height: 400px;
+
+}
+
+
 .navbar-brand {
-  text-decoration: none;
-  color: #f582ae !important;
+ text-decoration: none;
+ color: #f582ae !important;
 }
 
 .brandName {
-  text-decoration: none !important;
-  color: #f582ae;
-  cursor: pointer;
-  
+ text-decoration: none !important;
+ color: #f582ae;
+ cursor: pointer;
+ 
 }
 
 .brandName:hover{
-   text-decoration: none !important;
-   color: #8bd3dd;
+  text-decoration: none !important;
+  color: #8bd3dd;
 
+}
+
+footer{
+ color: #fef6e4
 }
 
 footer a{
-  text-decoration: none;
-  color: hotpink;
+ text-decoration: none;
+ color: hotpink;
 }
 
 footer a:hover {
-  text-decoration: none;
-  color: teal;
+ text-decoration: none;
+ color: teal;
 }
