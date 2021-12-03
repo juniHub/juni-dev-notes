@@ -13,7 +13,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-
+import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import appStyle from './appStyle';
 
@@ -28,6 +28,7 @@ class PublicNotes extends React.Component {
       selectedNote: null,
       notes: null,
       mobileOpen: false,
+      dashboard: false,
    
     };
    
@@ -38,6 +39,13 @@ class PublicNotes extends React.Component {
       mobileOpen: !this.state.mobileOpen
     });
    };
+
+   goToDashBoard = async () => {
+    await this.setState({
+      dashboard: true,
+    });
+   };
+
 
   render ()
   {
@@ -83,6 +91,17 @@ class PublicNotes extends React.Component {
             <Typography className={ classes.brandTitle } variant="h6" noWrap>
             <Link className={classes.linkLink} to="/"><HomeIcon/></Link> 
           </Typography>
+          
+          <div className={classes.createButton}>
+          <Button
+            variant="outlined"
+            color="inherit"
+            onClick={ this.goToDashBoard}>
+
+            Dashboard
+            </Button>
+            </div>
+            
            
         </Toolbar>
         </AppBar>
@@ -118,14 +137,11 @@ class PublicNotes extends React.Component {
         <main className={classes.content}>
         <div className={classes.toolbar} />
         {
-          this.state.selectedNote ?
-          <Notes 
-          selectedNote={this.state.selectedNote}
-          selectedNoteIndex={this.state.selectedNoteIndex}
-          notes={this.state.notes}
-         >
-         </Notes> :
-              <div style={{marginTop: "3rem"}}>
+
+          
+          this.state.dashboard?
+
+          <div style={{marginTop: "3rem"}}>
                 <CardComponentPublic
                   selectedNoteIndex={ this.state.selectedNoteIndex }
                   notes={this.state.notes}
@@ -133,7 +149,24 @@ class PublicNotes extends React.Component {
                   
                 </CardComponentPublic>
            
-                </div>
+          </div> :
+
+          this.state.selectedNote ?
+          <Notes 
+          selectedNote={this.state.selectedNote}
+          selectedNoteIndex={this.state.selectedNoteIndex}
+          notes={this.state.notes}
+         >
+         </Notes> :
+          <div style={{marginTop: "3rem"}}>
+                <CardComponentPublic
+                  selectedNoteIndex={ this.state.selectedNoteIndex }
+                  notes={this.state.notes}
+                  selectNote={ this.selectNote }>
+                  
+                </CardComponentPublic>
+           
+           </div>
 
              
  
@@ -161,7 +194,7 @@ class PublicNotes extends React.Component {
       });
   }
 
-  selectNote = (note, index) => this.setState({ selectedNoteIndex: index, selectedNote: note });
+  selectNote = (note, index) => this.setState({ selectedNoteIndex: index, selectedNote: note , dashboard: false});
  
   
 }
