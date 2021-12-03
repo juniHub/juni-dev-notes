@@ -43,11 +43,7 @@ class CategoryItem extends React.Component {
                    
           </ListItemText>
              
-          <Moment fromNow>
-         
-            {_note.timestamp && (_note.timestamp).toDate()}
-
-          </Moment>
+        
             
      
         </div>
