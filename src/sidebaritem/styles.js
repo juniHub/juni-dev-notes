@@ -39,7 +39,7 @@ const styles = theme => ( {
 
     display: "inline-block",
     marginTop: '3rem',
-    color :'#fffffe',
+    color : '#f582ae',
   
   
   },

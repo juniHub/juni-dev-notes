@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import Moment from 'react-moment';
 
 class SidebarItemComponentPublic extends React.Component {
 
@@ -28,10 +29,17 @@ class SidebarItemComponentPublic extends React.Component {
                   secondary={`Posted by: ${_note.userName}`}
                   
                   >
-            
-                
+              
+              </ListItemText>
+
                  
-          </ListItemText>
+              <Moment fromNow>
+
+               
+                {_note.timestamp && (_note.timestamp).toDate()}
+
+
+              </Moment>
 
               
             </div>

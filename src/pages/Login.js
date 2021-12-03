@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { signin, signInWithGoogle, signInWithGitHub } from "../helpers";
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+
 
 export default class Login extends Component {
   constructor() {
@@ -51,9 +53,11 @@ export default class Login extends Component {
 
   render() {
     return (
-      <>
+      <div id="signin">
       <Header></Header>
+      <section className="welcome-banner">
       <div className="jumbotron jumbotron-fluid py-5">
+      <div className="container text-center py-5 mt-5">
         <form
           className="mt-5 py-5 px-5"
           autoComplete="off"
@@ -79,14 +83,22 @@ export default class Login extends Component {
           <button className="btn btn-secondary" type="button" onClick={this.githubSignIn}>
             Sign in with GitHub
           </button>
-          <hr />
-          <p>
+
+         
+    
+          <p className="mt-5">
             Don't have an account? <Link className="text-info" to="/signup">Sign up</Link>
           </p>
+          
         </form>
+        <div className="svg-signin">
 
+       </div>
         </div>
-        </>
+        </div>
+        </section>
+        <Footer></Footer>
+        </div>
     );
   }
 }

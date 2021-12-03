@@ -5,6 +5,8 @@ import styles from './styles';
 import List from '@material-ui/core/List';
 import { Divider } from '@material-ui/core';
 import CategoryItem from '../sidebaritem/categoryItem';
+
+
 import InputBase from '@material-ui/core/InputBase';
 //import SearchIcon from '@material-ui/icons/Search';
 
@@ -31,7 +33,7 @@ class Category extends React.Component {
 
   render() {
 
-    const { notes, classes, selectedNoteIndex } = this.props;
+    const { notes, classes, selectedNoteIndex} = this.props;
 
     let filteredNotes = [];
    
@@ -95,7 +97,7 @@ class Category extends React.Component {
           <MenuItem className={ classes.selectCategory } value="Api">Api</MenuItem>
           <MenuItem className={ classes.selectCategory } value="Portfolio">Portfolio</MenuItem>
            <MenuItem className={ classes.selectCategory } value="Tutorial">Tutorial</MenuItem>
-          <MenuItem className={ classes.selectCategory } value="Open Source">Open Source</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="Open Sources">Open Sources</MenuItem>
           <MenuItem className={ classes.selectCategory } value="Others">Others</MenuItem>
         </Select>
         </FormControl>

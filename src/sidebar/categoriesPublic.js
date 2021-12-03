@@ -94,7 +94,7 @@ class CategoryPublic extends React.Component {
           <MenuItem className={ classes.selectCategory } value="Api">Api</MenuItem>
           <MenuItem className={ classes.selectCategory } value="Portfolio">Portfolio</MenuItem>
            <MenuItem className={ classes.selectCategory } value="Tutorial">Tutorial</MenuItem>
-          <MenuItem className={ classes.selectCategory } value="Open Source">Open Source</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="Open Sources">Open Sources</MenuItem>
           <MenuItem className={ classes.selectCategory } value="Others">Others</MenuItem>
         </Select>
         </FormControl>
@@ -137,7 +137,7 @@ class CategoryPublic extends React.Component {
 
 
   selectNote = (n, i) => this.props.selectNote(n, i);
-
+  
 
 }
 
