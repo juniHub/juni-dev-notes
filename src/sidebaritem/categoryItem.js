@@ -48,10 +48,7 @@ class CategoryItem extends React.Component {
      
         </div>
 
-         
-        {auth().currentUser !== null && _note.currentUserID===auth().currentUser.uid? <DeleteIcon onClick={() => this.deleteNote(_note)}
-             className={classes.deleteIcon}></DeleteIcon> : null
-          }
+       
          
         </ListItem>
          : null}
