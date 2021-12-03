@@ -91,6 +91,9 @@ class CardComponentPrivate extends React.Component {
 
 
         </div>
+
+        
+        <h3>ALL YOUR NOTES</h3>
            
           <Grid container spacing={2} >
             {

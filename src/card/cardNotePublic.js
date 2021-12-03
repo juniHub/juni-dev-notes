@@ -36,6 +36,8 @@ class CardComponentPublic extends React.Component {
 
       return(
         <div className={ classes.root }>
+
+        <h3>ALL PUBLIC NOTES</h3>
       
                
           <Grid container spacing={2} >
@@ -51,7 +53,7 @@ class CardComponentPublic extends React.Component {
                       <Chip
                       className={classes.chip}
                       label={_note.category}
-                              clickable />
+                      clickable />
                             
                     
                        

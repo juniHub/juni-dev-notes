@@ -137,7 +137,7 @@ class CategoryPublic extends React.Component {
 
 
   selectNote = (n, i) => this.props.selectNote(n, i);
-  deleteNote = (note) => this.props.deleteNote(note);
+
 
 }
 

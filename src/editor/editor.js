@@ -2,6 +2,7 @@ import React from 'react';
 
 import ReactQuill, {Quill} from 'react-quill';
 import "react-quill/dist/quill.snow.css";
+import EditorToolbar, { modules, formats } from "./editorToolbar";
 
 import debounce from '../helpers';
 import EditIcon from '@material-ui/icons/Edit';
@@ -16,50 +17,11 @@ import Select from '@material-ui/core/Select';
 import CategoryIcon from '@material-ui/icons/Category';
 
 
-import '../App.css';
-
 Quill.register('modules/imageCompress', ImageCompress);
 
 class EditorComponent extends React.Component {
  
-  toolbarOptions = [
-  ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-     [ 'blockquote'],
-      [{ 'font': [] }],
-   [{ 'header': 1 }, { 'header': 2 }],       
-
-  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-  [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-  [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-     [ { 'direction': 'rtl' } ],  // text direction
-    [{size: []}],                     
  
-  [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-
-  [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-
-     [ { 'align': [] } ],
-    ['link', 'image', 'video'],
-
-     [ 'clean' ],
-                                        // remove formatting button
-   ];
-
-    modules = {
-    syntax: true,
-    toolbar: this.toolbarOptions,
-    imageCompress: {
-      quality: 0.8, // default
-      maxWidth: 800, // default
-      maxHeight: 800, // default
-      imageType: 'image/jpeg', // default
-      debug: true, // default
-    },
-      clipboard: {
-    // toggle to add extra line breaks when pasting HTML:
-    matchVisual: false,
-  }
-  };
   
   constructor() {
     super();
@@ -122,7 +84,7 @@ class EditorComponent extends React.Component {
           <MenuItem className={ classes.selectCategory } value="Api">Api</MenuItem>
           <MenuItem className={ classes.selectCategory } value="Portfolio">Portfolio</MenuItem>
            <MenuItem className={ classes.selectCategory } value="Tutorial">Tutorial</MenuItem>
-          <MenuItem className={ classes.selectCategory } value="Open Source">Open Source</MenuItem>
+          <MenuItem className={ classes.selectCategory } value="Open Sources">Open Sources</MenuItem>
           <MenuItem className={ classes.selectCategory } value="Others">Others</MenuItem>
           
         </Select>
@@ -141,17 +103,21 @@ class EditorComponent extends React.Component {
           </input>
         </div>
 
+        <EditorToolbar />
+
         <ReactQuill 
         
           theme={'snow'}
           value={this.state.text} 
           onChange={this.updateBody}
-          modules={this.modules}
+         
+          modules={modules}
+          formats={formats}
           placeholder="Enter your notes here!"
     
-          >
+          />
            
-        </ReactQuill>
+   
 
         <div className={classes.clearButton}>
           <Button

@@ -12,7 +12,6 @@ import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home';
-import EditIcon from '@material-ui/icons/Edit';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
@@ -33,7 +32,7 @@ class Dashboard extends React.Component {
       selectedNote: null,
       notes: null,
       mobileOpen: false,
-      newNote: false,
+      dashboard: false,
     
    
     };
@@ -46,9 +45,9 @@ class Dashboard extends React.Component {
     });
    };
   
-  createNote = async () => {
+  goToDashBoard = async () => {
     await this.setState({
-      newNote: !this.state.newNote,
+      dashboard: true,
      
     });
    };
@@ -101,8 +100,8 @@ class Dashboard extends React.Component {
           <Button
             variant="outlined"
             color="inherit"
-            onClick={ this.createNote }>
-            <EditIcon/>
+            onClick={ this.goToDashBoard }>
+            DASHBOARD
             </Button>
             </div>
             
@@ -142,7 +141,7 @@ class Dashboard extends React.Component {
         <div className={classes.toolbar} />
         {
          
-          this.state.newNote ?
+          this.state.dashboard ?
                 
          <div style={{marginTop: "3rem"}}>
           <CardComponentPrivate
@@ -156,7 +155,8 @@ class Dashboard extends React.Component {
           </div> :
               
           this.state.selectedNote ?
-          <EditorComponent selectedNote={this.state.selectedNote}
+          <EditorComponent 
+          selectedNote={this.state.selectedNote}
           selectedNoteIndex={this.state.selectedNoteIndex}
           notes={this.state.notes}
           noteUpdate={this.noteUpdate}>

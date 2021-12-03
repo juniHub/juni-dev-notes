@@ -4,6 +4,7 @@ import styles from './styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
+
 import Chip from '@material-ui/core/Chip';
 
 import { auth } from '../services/firebase';
@@ -45,7 +46,9 @@ class CategoryItem extends React.Component {
           </ListItemText>
               
         </div>
-         
+
+             
+       
         </ListItem>
          : null}
          </>
@@ -53,6 +56,7 @@ class CategoryItem extends React.Component {
     );
   }
   selectNote = (n, i) => this.props.selectNote(n, i);
+ 
  
 
 }
