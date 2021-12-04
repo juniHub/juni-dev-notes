@@ -5,7 +5,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![Netlify Status](https://api.netlify.com/api/v1/badges/09e91653-d2f5-4352-995d-562ab54ca487/deploy-status)](https://app.netlify.com/sites/juni-ask/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9874ce42-fb6e-41e0-b6c0-907df9a865e7/deploy-status)](https://app.netlify.com/sites/juni-dev-note/deploys)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
@@ -73,7 +73,7 @@
 
 ## About The Project
 
-![Juni-juni-dev-notes-screenshot](https://res.cloudinary.com/dafolrlpj/image/upload/v1627304394/gallery/xd95iziw5vypx7lpymoc.png)
+![Juni-juni-dev-notes-screenshot](https://res.cloudinary.com/dafolrlpj/image/upload/v1638627689/gallery/usjlnzz4rf2z0mxzrs8r.png)
 
 ### Built With
 
