@@ -5,25 +5,25 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![Netlify Status](https://api.netlify.com/api/v1/badges/09e91653-d2f5-4352-995d-562ab54ca487/deploy-status)](https://app.netlify.com/sites/juni-ask/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9874ce42-fb6e-41e0-b6c0-907df9a865e7/deploy-status)](https://app.netlify.com/sites/juni-dev-note/deploys)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/juniHub/juni-dev-notes.svg?style=for-the-badge
-[contributors-url]: https://github.com/juniHub/juni-dev-notes/graphs/contributors
+[contributors-url]: https://github.com/juniHub/dev-note-v2/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/juniHub/juni-dev-notes.svg?style=for-the-badge
-[forks-url]: https://github.com/juniHub/juni-dev-notes/network/members
+[forks-url]: https://github.com/juniHub/dev-note-v2/network/members
 [stars-shield]: https://img.shields.io/github/stars/juniHub/juni-dev-notes.svg?style=for-the-badge
-[stars-url]: https://github.com/juniHub/juni-dev-notes/stargazers
+[stars-url]: https://github.com/juniHub/dev-note-v2/stargazers
 [issues-shield]: https://img.shields.io/github/issues/juniHub/juni-dev-notes.svg?style=for-the-badge
-[issues-url]: https://github.com/juniHub/juni-dev-notes/issues
+[issues-url]: https://github.com/juniHub/dev-note-v2/issues
 [license-shield]: https://img.shields.io/github/license/juniHub/juni-dev-notes.svg?style=for-the-badge
-[license-url]: https://github.com/juniHub/juni-dev-notes/blob/master/LICENSE.txt
+[license-url]: https://github.com/juniHub/dev-note-v2/blob/master/LICENSE.txt
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/juniHub/juni-dev-notes">
+  <a href="hhttps://github.com/juniHub/dev-note-v2">
     <img src="logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -32,14 +32,14 @@
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/juniHub/juni-dev-notes"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/juniHub/dev-note-v2"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://juni-dev-note.netlify.app/" target="_blank">View Demo</a>
     ·
-    <a href="https://github.com/juniHub/juni-dev-notes/issues">Report Bug</a>
+    <a href="https://github.com/juniHub/dev-note-v2/issues">Report Bug</a>
     ·
-    <a href="https://github.com/juniHub/juni-dev-notes/issues">Request Feature</a>
+    <a href="https://github.com/juniHub/dev-note-v2/issues">Request Feature</a>
   </p>
 </p>
 
@@ -73,7 +73,7 @@
 
 ## About The Project
 
-![Juni-juni-dev-notes-screenshot](https://res.cloudinary.com/dafolrlpj/image/upload/v1627304394/gallery/xd95iziw5vypx7lpymoc.png)
+![Juni-juni-dev-notes-screenshot](https://res.cloudinary.com/dafolrlpj/image/upload/v1638627689/gallery/usjlnzz4rf2z0mxzrs8r.png)
 
 ### Built With
 
@@ -102,7 +102,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/juniHub/juni-dev-notes.git
+   git clone https://github.com/juniHub/dev-note-v2.git
    ```
 2. Install NPM packages
 
@@ -132,7 +132,7 @@ _For more examples, please refer to the [Documentation](https://junitiennguyen.g
 
 ## Roadmap
 
-See the [open issues](https://github.com/juniHub/juni-dev-notes/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/juniHub/dev-note-v2/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 
@@ -158,7 +158,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Juni Nguyen - [helloJuni](https://hellojuninguyen.netlify.app/)
 
-Project Link: [https://github.com/juniHub/juni-dev-notes](https://github.com/juniHub/juni-dev-notes)
+Project Link: [https://github.com/juniHub/dev-note-v2](https://github.com/juniHub/dev-note-v2)
 
 <!-- ACKNOWLEDGEMENTS -->
 

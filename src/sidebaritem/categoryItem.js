@@ -3,10 +3,12 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import DeleteIcon from '@material-ui/icons/Delete';
+
+
 import Chip from '@material-ui/core/Chip';
+
 import { auth } from '../services/firebase';
-import Moment from 'react-moment';
+
 class CategoryItem extends React.Component {
 
   render() {
@@ -40,16 +42,13 @@ class CategoryItem extends React.Component {
               secondary={`Posted by: ${_note.userName}`}
          
           >
-                   
+                 
           </ListItemText>
-             
-        
-            
-     
+              
         </div>
 
+             
        
-         
         </ListItem>
          : null}
          </>
@@ -57,13 +56,7 @@ class CategoryItem extends React.Component {
     );
   }
   selectNote = (n, i) => this.props.selectNote(n, i);
-
-  deleteNote = (note) => {
-    if(window.confirm(`Are you sure you want to delete: ${note.title}`)) {
-      this.props.deleteNote( note );
-    
-    }
-  }
+ 
  
 
 }

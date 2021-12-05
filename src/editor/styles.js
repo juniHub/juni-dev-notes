@@ -10,10 +10,10 @@ const styles = theme => ( {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    textAlign: 'center',
-    margin: '2rem',
-    marginTop: '6rem',
+    margin: '2rem 1rem 1rem 1rem',
     background: '#fef6e4',
+    width: '100%',
+    height: '100%',
    
   },
 
@@ -40,9 +40,8 @@ const styles = theme => ( {
   titleHeading: {
   
     boxSizing: 'border-box',
-    marginTop: '2rem',
-    padding: '2rem',
-    height: '60px',
+    margin: '2rem',
+    height: '100%',
     width: '90%',
    
     textAlign: 'center',
@@ -54,11 +53,7 @@ const styles = theme => ( {
      
   },
 
-  heading: {
-    padding: '1rem',
-    color: '#232946 !important',
-  },
-
+ 
    
   noteContent:{
 
@@ -67,9 +62,8 @@ const styles = theme => ( {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: '2rem',
-    padding: '2rem',
-    
+    margin: '2rem'
+   
  
   },
 
@@ -101,17 +95,12 @@ const styles = theme => ( {
    
  
 
-    formControl: {
+   formControl: {
    
-    minWidth: 200,
     boxSizing: 'border-box',
-    margin: '2rem', 
-    padding: '2rem',
-    height: '60px',
-    
+    margin: '4rem 1rem 1rem 1rem', 
+    padding: '1rem',
     backgroundColor: '#fef6e4',
- 
-  
      
    
   },
@@ -122,7 +111,6 @@ const styles = theme => ( {
     boxSizing: 'border-box',
     fontSize: '25px',
     textAlign: 'center',
-    height: '80px',
     color: '#f582ae',
       
   },

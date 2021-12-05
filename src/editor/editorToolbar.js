@@ -2,10 +2,6 @@ import React from "react";
 import { Quill } from "react-quill";
 import ImageCompress from 'quill-image-compress';
 
-// Custom Undo button icon component for Quill editor. You can import it directly
-// from 'quill/assets/icons/undo.svg' but I found that a number of loaders do not
-// handle them correctly
-
 Quill.register('modules/imageCompress', ImageCompress);
 
 const CustomUndo = () => (
@@ -63,15 +59,11 @@ export const modules = {
       redo: redoChange
     }
   },
-  history: {
-    delay: 500,
-    maxStack: 100,
-    userOnly: true
-  },
+
   imageCompress: {
     quality: 0.8, // default
-    maxWidth: 800, // default
-    maxHeight: 800, // default
+    maxWidth: 300, // default
+    maxHeight: 300, // default
     imageType: 'image/jpeg', // default
     debug: true, // default
   },
@@ -95,6 +87,7 @@ export const formats = [
   "indent",
   "link",
   "image",
+  "video",
   "color",
   "code-block"
 ];

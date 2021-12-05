@@ -98,7 +98,7 @@ class EditorComponent extends React.Component {
         <input
           className={classes.titleInput}
           placeholder='You can edit your note title here'
-          value={this.state.title ? this.state.title : 'You can edit your note title here'}
+          value={this.state.title ? this.state.title : ''}
           onChange={(e) => this.updateTitle(e.target.value)}>
           </input>
         </div>

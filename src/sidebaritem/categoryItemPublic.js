@@ -3,8 +3,10 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+
 import Chip from '@material-ui/core/Chip';
-import Moment from 'react-moment';
+
+
 
 class CategoryItemPublic extends React.Component {
 
@@ -36,10 +38,10 @@ class CategoryItemPublic extends React.Component {
                
               primary={_note.title}
               secondary={`Posted by: ${_note.userName}`}
+         
           >
-     
+                 
           </ListItemText>
-
               
         </div>
          

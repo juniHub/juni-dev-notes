@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { signup, signInWithGoogle, signInWithGitHub } from "../helpers";
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 export default class SignUp extends Component {
 
@@ -52,7 +54,11 @@ export default class SignUp extends Component {
 
   render() {
     return (
+      <div id="signup">
+      <Header></Header>
+      <section className="welcome-banner">
       <div className="jumbotron jumbotron-fluid py-5">
+       <div className="container text-center py-5 mt-5">
         <form className="mt-5 py-5 px-5" onSubmit={this.handleSubmit}>
           <h1>
             Sign Up to
@@ -70,9 +76,16 @@ export default class SignUp extends Component {
           <button className="btn btn-secondary" type="button" onClick={this.githubSignIn}>
             Sign up with GitHub
           </button>
-          <hr></hr>
-          <p>Already have an account? <Link className="text-info" to="/login">Login</Link></p>
+       
+          <p className="mt-5">Already have an account? <Link className="text-info" to="/login">Login</Link></p>
         </form>
+        <div className="svg-signin">
+
+        </div>
+        </div>
+      </div>
+      </section>
+      <Footer></Footer>
       </div>
     )
   }

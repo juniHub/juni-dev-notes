@@ -5,14 +5,13 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { auth } from '../services/firebase';
-import Moment from 'react-moment';
+
+
 class SidebarItemComponent extends React.Component {
 
   render() {
 
     const { _index, _note, classes, selectedNoteIndex} = this.props;
-
-       
 
     return(
   
@@ -23,36 +22,29 @@ class SidebarItemComponent extends React.Component {
           alignItems='flex-start'
           onClick={() => this.selectNote(_note, _index)}>
            
-            <div className={classes.textSection}>
+            <div 
+              className={classes.textSection}
+           >
                 <ListItemText
                
                   primary={_note.title}
                   secondary={ `Posted by: ${ _note.userName }` }
-              
                  
-                >
-             </ListItemText>
+                  
+            >
+            </ListItemText>
 
-             
-           
-
-
-
-            </div>
-
-         
-
-       
+            {_note.timestamp && (_note.timestamp).toDate().toDateString()}
+            
+          </div>
           
             
             {auth().currentUser !== null && _note.currentUserID===auth().currentUser.uid? <DeleteIcon onClick={() => this.deleteNote(_note)}
              className={classes.deleteIcon}></DeleteIcon> : null
             }
-
         </ListItem>
-
         : null}
-      </>
+        </>
    
     );
   }
