@@ -79,9 +79,11 @@
 
 - [ReactJS](https://reactjs.org/)
 - [Firebase](https://firebase.google.com/)
-- [Quill Editor](https://quilljs.com/)
+- [React-Quill](https://openbase.com/js/react-quill/documentation)
 - [Material UI](https://material-ui.com/)
+- [Bootstrap 4] (https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 - [Deployed on Netlify](https://www.netlify.com/)
+
 
 <!-- GETTING STARTED -->
 
